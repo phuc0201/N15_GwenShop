@@ -1,0 +1,29 @@
+.sidebar{
+    width: 20rem;
+    height: 100vh;
+    background-color: var(--main-color);
+}
+.sidebar ul{
+    margin: 0;
+    padding: 0;
+}
+.sidebar li{
+    font-size: 1.6rem;
+    list-style: none;
+    padding: 2.5rem;
+}
+.sidebar li:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,255,0.1);
+}
+.sidebar .weblogo{
+
+    padding: 5rem;
+}
+
+.sidebar .category .category__icon
+{
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 1rem;
+}

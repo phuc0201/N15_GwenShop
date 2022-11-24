@@ -1,0 +1,275 @@
+.content__wrapper{
+    flex: 1;
+    height: 100vh;
+    background-color: var(--main-color);
+    padding: 2rem 2rem 2rem 0;
+}
+.content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(185, 180, 184);
+    border-radius: 1rem;
+    padding: 4rem;
+}
+
+/* HEADER */
+.content__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+}
+.content__header div{
+    display: flex;
+}
+.content__header--buttonDel{
+    display: none;
+    width: 2rem;
+    height: 3rem;
+}
+.content__header--buttonAdd{
+    width: 3rem;
+    height: 3rem;
+}
+.content__header--buttonAdd,
+.content__header--buttonDel{
+    cursor: pointer;
+    margin-left: 1rem;
+
+}
+/* TABLE */
+
+.table_wrapper
+{
+    position: absolute;
+    top: 9rem;
+    bottom: 5rem;
+    right: 4rem;
+    left: 4rem;
+    scrollbar-width: thin;
+    background-color: white;
+    overflow: auto;
+}
+.table_wrapper::-webkit-scrollbar-track{
+    background-color: #CFD8DC;
+}
+.table_wrapper::-webkit-scrollbar{
+    width: 8px;
+}
+.table_wrapper::-webkit-scrollbar-thumb{
+    background-color: #90A4AE;
+    border-radius: 6px;
+    border: 3px solid #CFD8DC;
+}
+.table_wrapper table th{
+    position: sticky;
+    top: 0;
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--main-color);
+}
+.table_wrapper table{
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+.table_wrapper table td{
+    text-align: center;
+    padding: 1rem;
+    border-collapse: collapse;
+    color: black;
+}
+.table_wrapper table, td:hover{
+    cursor: pointer;
+}
+
+.table_wrapper table tr:nth-child(odd){
+    background-color: #eeeeee;
+}
+
+/* SEARCH */
+.content .search{
+    display: flex;
+    align-items: center;
+}
+.search--input{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    line-height: 1.6rem;
+    padding: 0.8rem;
+}
+
+/* Show Infor member */
+#inforMember{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    height: 50rem;
+    background-color: white;
+    border-radius: 4px;
+    z-index: 1;
+}
+#inforMember .form-info{
+    position: absolute;
+    top: 2rem;
+    color: black;
+    margin-left: 3rem;
+}
+
+#inforMember .form-info span{
+    font-size: 1.6rem;
+    color: black;
+}
+#inforMember .icon_close{
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+}
+#inforMember .form-info td{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+#inforMember .form-info td input,
+#inforMember .form-info td #role{
+    border: 1px solid #90A4AE;
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+#inforMember .form-info--button{
+    display: flex;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+#inforMember button{
+    margin-left: 1rem;
+    padding: 1rem 1.5rem;
+    width: 10rem;
+    border-radius: 2rem;
+
+}
+#inforMember .form-info--button .btn_Insert{
+    display: none;
+}
+#inforMember .form-info--button .btn_Insert,
+#inforMember .form-info--button .btn_Update{
+    background-color: var(--main-color);
+    color: white;
+}
+#inforMember .form-info--button .btn_Delete{
+    border: 2px solid var(--main-color);
+    background-color: white;
+}
+#inforMember .form-info--button .btn_Insert:hover,
+#inforMember .form-info--button .btn_Update:hover,
+#inforMember .form-info--button .btn_Delete:hover{
+    transform: rotateY(-20deg);
+}
+
+.toast_nitification{
+    position: fixed;
+    top: 5px;
+    right: 0;
+    width: 20rem;
+    translate: 100%;
+    transition: ease-in-out 0.5s;
+    background-color: white;
+    border-left: 5px solid green;
+}
+#toast {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 999999;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 20px 0;
+    min-width: 400px;
+    max-width: 450px;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    transition: all linear 0.3s;
+}
+
+.toast--success {
+    border-color: #47d864;
+}
+
+.toast--success .toast__icon {
+    color: #47d864;
+}
+
+.toast--info {
+    border-color: #2f86eb;
+}
+
+.toast--info .toast__icon {
+    color: #2f86eb;
+}
+
+.toast--warning {
+    border-color: #ffc021;
+}
+
+.toast--warning .toast__icon {
+    color: #ffc021;
+}
+
+.toast--error {
+    border-color: #ff623d;
+}
+
+.toast--error .toast__icon {
+    color: #ff623d;
+}
+
+.toast + .toast {
+    margin-top: 24px;
+}
+
+.toast__icon {
+    font-size: 24px;
+}
+
+.toast__icon,
+.toast__close {
+    padding: 0 16px;
+}
+
+.toast__body {
+    flex-grow: 1;
+}
+
+.toast__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.toast__msg {
+    font-size: 14px;
+    color: #888;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+.toast__close {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}

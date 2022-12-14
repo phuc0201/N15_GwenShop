@@ -27,7 +27,7 @@
 .table_product .product-image{
     width: 12rem;
     height: 12rem;
-    background-size: auto 100%;
+    background-size: 100% auto;
     background-repeat: no-repeat;
 }
 .table_product .product-description{

@@ -1,66 +1,67 @@
-//package GwenShop.com.controller.User;
-//import GwenShop.com.Service.*;
-//import GwenShop.com.Service.Impl.*;
-//
-//import javax.servlet.ServletException;
-//import javax.servlet.annotation.WebServlet;
-//import javax.servlet.http.HttpServlet;
-//import javax.servlet.http.HttpServletRequest;
-//import javax.servlet.http.HttpServletResponse;
-//import javax.servlet.http.HttpSession;
-//import java.io.IOException;
-//import java.math.BigDecimal;
-//import java.util.List;
-//
-//@WebServlet(urlPatterns ={"/cart", "/cart/delete", "/cart/updateQuantity", "/cart/checkout"})
-//public class CartController extends HttpServlet {
-//    IUserService userService = new UserServiceImpl();
-//    ICartService cartService = new CartServiceImpl();
-//    ICartItemService cartItemService = new CartItemServiceImpl();
-//    IOrderService orderService = new OrderServiceImpl();
-//    IOrderItemService orderItemService = new IOrderItemServiceImpl();
-//    @Override
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String url = request.getRequestURL().toString();
-//        if (url.contains("delete")){
-//            deleteCartItem(request, response);
-//            findAll(request, response);
-//            if (!response.isCommitted()) {
-//                request.getRequestDispatcher("/views/user/cart.jsp").forward(request, response);
-//            }
-//        } else if (url.contains("checkout")) {
-//            getCheckout(request, response);
-//        } else {
+package GwenShop.com.controller.User;
+import GwenShop.com.Service.*;
+import GwenShop.com.Service.Impl.*;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.List;
+
+@WebServlet(urlPatterns ={"/user/cart", "/cart/delete", "/cart/updateQuantity", "/cart/checkout"})
+public class CartController extends HttpServlet {
+    IUserService userService = new UserServiceImpl();
+    ICartService cartService = new CartServiceImpl();
+    ICartItemService cartItemService = new CartItemServiceImpl();
+    IOrderService orderService = new OrderServiceImpl();
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String url = request.getRequestURL().toString();
+        if (url.contains("delete")){
+            deleteCartItem(request, response);
+            findAll(request, response);
+            if (!response.isCommitted()) {
+                request.getRequestDispatcher("/views/user/cart.jsp").forward(request, response);
+            }
+        } else if (url.contains("checkout")) {
+            getCheckout(request, response);
+        }
+        else {
 //            findAll(request, response);
 //            if (!response.isCommitted()){
 //                request.getRequestDispatcher("/views/user/cart.jsp").forward(request,response);
 //            }
-//        }
-//    }
-//
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String url = request.getRequestURL().toString();
-//        if (url.contains("updateQuantity")) {
-//            updateQuantity(request, response);
-//        } else if (url.contains("checkout")) {
-//            postCheckout(request, response);
-//            findAllOrder(request, response);
-//            request.getRequestDispatcher("/views/user/OrderList.jsp").forward(request,response);
-//        }
-//    }
-//
-//    private void getCheckout(HttpServletRequest request, HttpServletResponse response) {
-//        try {
-//            findAll(request, response);
-//            request.getRequestDispatcher("/views/user/checkout.jsp").forward(request,response);
-//        } catch (ServletException e) {
-//            throw new RuntimeException(e);
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
-//    private void postCheckout(HttpServletRequest request, HttpServletResponse response) {
+            request.getRequestDispatcher("/views/user/cart.jsp").forward(request,response);
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String url = request.getRequestURL().toString();
+        if (url.contains("updateQuantity")) {
+            updateQuantity(request, response);
+        } else if (url.contains("checkout")) {
+            postCheckout(request, response);
+            findAllOrder(request, response);
+            request.getRequestDispatcher("/views/user/OrderList.jsp").forward(request,response);
+        }
+    }
+
+    private void getCheckout(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            findAll(request, response);
+            request.getRequestDispatcher("/views/user/checkout.jsp").forward(request,response);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private void postCheckout(HttpServletRequest request, HttpServletResponse response) {
 //        try{
 //            HttpSession session = request.getSession(true);
 //            if (session.getAttribute("userId") == null && !response.isCommitted()) {
@@ -104,9 +105,9 @@
 //            e.printStackTrace();
 //            request.setAttribute("msg", "Eror: " + e.getMessage());
 //        }
-//    }
-//
-//    private void updateQuantity(HttpServletRequest request, HttpServletResponse response) {
+    }
+
+    private void updateQuantity(HttpServletRequest request, HttpServletResponse response) {
 //        try{
 //            HttpSession session = request.getSession(true);
 //            if (session.getAttribute("userId") == null && !response.isCommitted()) {
@@ -123,9 +124,9 @@
 //            e.printStackTrace();
 //            request.setAttribute("msg", "Eror: " + e.getMessage());
 //        }
-//    }
-//
-//    private void deleteCartItem(HttpServletRequest request, HttpServletResponse response) {
+    }
+
+    private void deleteCartItem(HttpServletRequest request, HttpServletResponse response) {
 //        try{
 //            HttpSession session = request.getSession(true);
 //            if (session.getAttribute("userId") == null && !response.isCommitted()) {
@@ -142,9 +143,9 @@
 //            e.printStackTrace();
 //            request.setAttribute("msg", "Eror: " + e.getMessage());
 //        }
-//    }
-//
-//    private void findAllOrder(HttpServletRequest request, HttpServletResponse response) {
+    }
+
+    private void findAllOrder(HttpServletRequest request, HttpServletResponse response) {
 //        try {
 //            HttpSession session = request.getSession(true);
 //            if (session.getAttribute("userId") == null && !response.isCommitted()) {
@@ -159,9 +160,9 @@
 //            e.printStackTrace();
 //            request.setAttribute("msg", "Eror: " + e.getMessage());
 //        }
-//    }
-//
-//    private void findAll(HttpServletRequest request, HttpServletResponse response) {
+    }
+
+    private void findAll(HttpServletRequest request, HttpServletResponse response) {
 //        try {
 //            HttpSession session = request.getSession(true);
 //            if (session.getAttribute("userId") == null && !response.isCommitted()) {
@@ -176,5 +177,5 @@
 //            e.printStackTrace();
 //            request.setAttribute("msg", "Eror: " + e.getMessage());
 //        }
-//    }
-//}
+    }
+}

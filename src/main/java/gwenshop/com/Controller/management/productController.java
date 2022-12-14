@@ -2,8 +2,10 @@ package GwenShop.com.controller.management;
 import GwenShop.com.DAO.Impl.ProductDAOImpl;
 import GwenShop.com.Service.ICategoryService;
 import GwenShop.com.Service.IProductService;
+import GwenShop.com.Service.IUserService;
 import GwenShop.com.Service.Impl.CategoryServiceImpl;
 import GwenShop.com.Service.Impl.ProductServiceImpl;
+import GwenShop.com.Service.Impl.UserServiceImpl;
 import GwenShop.com.entity.Product;
 import GwenShop.com.entity.ProductImage;
 import GwenShop.com.entity.Users;
@@ -19,7 +21,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/product", "/product/load-table", "/product/create", "/product/delete", "/product/edit"})
+@WebServlet(urlPatterns = {"/product", "/product/load-table", "/product/create", "/product/delete", "/product/edit",
+"/product/deleteMany"})
 public class productController extends HttpServlet {
     IProductService productService = new ProductServiceImpl();
     ICategoryService categoryService = new CategoryServiceImpl();
@@ -55,6 +58,9 @@ public class productController extends HttpServlet {
 
         if(url.contains("create")){
             insert(request, entityManager);
+        }
+        else if(url.contains("product/deleteMany")){
+            deleteMany(request, entityManager);
         }
         else if(url.contains("delete")){
             delete(request, entityManager);
@@ -145,5 +151,16 @@ public class productController extends HttpServlet {
         product.setCategory(categoryService.findById(Integer.parseInt(request.getParameter("category"))));
         ProductDAOImpl productDAO = new ProductDAOImpl();
         productDAO .update(entityManager, product, ImageList);
+    }
+    public void deleteMany(HttpServletRequest request, EntityManager entityManager){
+        String[] listId = request.getParameterValues("arrayData[]");
+        for(String id: listId){
+            try
+            {
+                productService.delete(entityManager, Integer.parseInt(id));
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
     }
 }

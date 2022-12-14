@@ -18,7 +18,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @WebServlet(urlPatterns = {"/employee", "/employee/create", "/employee/delete", "/employee/edit",
-"/employee/load-table", "/customer", "/customer/load-table", "/customer/create", "/customer/delete", "/customer/edit"})
+"/employee/load-table", "/customer", "/customer/load-table", "/customer/create", "/customer/delete", "/customer/edit",
+"/employee/deleteMany", "/customer/deleteMany"})
 public class userController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,8 +47,14 @@ public class userController extends HttpServlet {
         else if(url.contains("edit")){
             update(request,response);
         }
+        else if(url.contains("employee/deleteMany")){
+            deleteMany(request);
+        }
+        else if(url.contains("customer/deleteMany")){
+            deleteMany(request);
+        }
         else if(url.contains("delete")){
-            delete(request,response);
+            delete(request);
         }
         else if (url.contains("load-table")){
             if(url.contains("customer"))
@@ -98,12 +105,12 @@ public class userController extends HttpServlet {
     {
         String url = req.getRequestURL().toString();
         Users user = new Users();
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDateTime now = LocalDateTime.now();
         req.setCharacterEncoding("UTF-8");
         try {
             BeanUtils.populate(user, req.getParameterMap());
-            user.setCreate_at(dtf.format(now).toString());
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDateTime now = LocalDateTime.now();
+            user.setCreate_at(dtf.format(now));
             if(url.contains("customer")){
                 user.setRoles(0);
             }
@@ -139,13 +146,25 @@ public class userController extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
-    private void delete(HttpServletRequest req, HttpServletResponse resp){
+    private void delete(HttpServletRequest req){
         try
         {
             IUserService userService = new UserServiceImpl();
             userService.delete(Integer.parseInt(req.getParameter("id")));
         }catch (Exception e){
             e.printStackTrace();
+        }
+    }
+    private void deleteMany(HttpServletRequest request){
+        String[] listId = request.getParameterValues("arrayData[]");
+        for(String id: listId){
+            try
+            {
+                IUserService userService = new UserServiceImpl();
+                userService.delete(Integer.parseInt(id));
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 }

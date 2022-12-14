@@ -1,0 +1,114 @@
+/* Show Infor member */
+#inforMember {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f1f1f1;
+    justify-content: center;
+    z-index: 9999;
+    display: none;
+}
+#inforMember #role{
+    border: 1px solid #90A4AE;
+    outline: none;
+    padding: 1rem;
+    border-radius: 4px;
+}
+#inforMember .form-info--button{
+    display: flex;
+    flex-direction: row-reverse;
+    /* position: absolute;
+    bottom: 2rem;
+    right: 2rem; */
+}
+
+#inforMember .form-info--button .btn_Insert,
+#inforMember .form-info--button .btn_Delete,
+#inforMember .form-info--button .btn_Update{
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    margin-right: 1rem;
+    min-width: 10rem;
+}
+#inforMember .form-info--button .btn_Insert{
+    display: none;
+}
+#inforMember .form-info--button .btn_Insert,
+#inforMember .form-info--button .btn_Update{
+    background-color: var(--main-color);
+    color: white;
+}
+#inforMember .form-info--button .btn_Delete{
+    border: 2px solid var(--main-color);
+    background-color: white;
+}
+#inforMember .form-info--button .btn_Insert:hover,
+#inforMember .form-info--button .btn_Update:hover,
+#inforMember .form-info--button .btn_Delete:hover{
+    transform: rotateY(-20deg);
+}
+
+.form {
+    width: 48rem;
+    min-height: 10rem;
+    padding: 3.2rem 2.4rem;
+    text-align: center;
+    background: #fff;
+    border-radius: 2px;
+    margin: 2.4rem;
+    align-self: center;
+    box-shadow: 0 0.2rem 0.5rem 0 rgba(51,62,73,.1);
+}
+.form .heading {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: black;
+}
+.form-group {
+    display: flex;
+    margin-bottom: 1.6rem;
+    flex-direction: column;
+}
+.form-group:last-of-type{
+    margin-left: 2rem;
+}
+.form-label,
+.form-message {
+    text-align: left;
+    color: black;
+}
+
+.form-label {
+    font-weight: 700;
+    padding-bottom: 0.6rem;
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+}
+
+.form-control {
+    height: 4rem;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    outline: none;
+    font-size: 1.4rem;
+}
+
+.form-control:hover {
+    border-color: #1dbfaf;
+}
+
+.form-group.invalid .form-control {
+    border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+    color: #f33a58;
+}
+
+.form-message {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding: 4px 0 0;
+}

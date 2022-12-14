@@ -1,23 +1,27 @@
-package gwenshop.com.Controller;
+package GwenShop.com.controller;
 
-import gwenshop.com.util.Constants;
+import GwenShop.com.Service.IUserService;
+import GwenShop.com.Service.Impl.UserServiceImpl;
+import GwenShop.com.util.JPAConfig;
 
+import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import javax.swing.text.html.parser.Entity;
 import java.io.IOException;
 
-@WebServlet(value = "/login")
+@WebServlet(value = "/admin/login")
 public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //Kiểm tra trong session nếu có tài khoản thì chuyển trang
+        EntityManager entityManager = JPAConfig.getEntityManager();
         HttpSession session = req.getSession(false);
         if (session != null && session.getAttribute("account") != null) {
             resp.sendRedirect(req.getContextPath() + "/waiting");
             return;
         }
-
         // Check cookie
         Cookie[] cookies = req.getCookies();
         if (cookies != null) {
@@ -39,46 +43,59 @@ public class LoginController extends HttpServlet {
             resp.setContentType("text/html");
             resp.setCharacterEncoding("UTF-8");
             req.setCharacterEncoding("UTF-8");
-
-            String username = req.getParameter("username");
-            String password = req.getParameter("password");
-            boolean isRememberMe = false;
-            String remember = req.getParameter("remember");
-            if("on".equals(remember)){
-                isRememberMe = true;
-            }
-            //Check if there is does not have input
             String alertMsg="";
-            if(username.isEmpty() || password.isEmpty()){
-                alertMsg = "Tài khoản hoặc mật khẩu không được rỗng";
-                req.setAttribute("alert", alertMsg);
-                req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
-                return;
-            }
+            String email = req.getParameter("username");
+            String password = req.getParameter("password");
+            IUserService userService = new UserServiceImpl();
+            resp.sendRedirect("/employee");
+//            if(username.equals("phuc") && password.equals("123456")){
+//                resp.sendRedirect("/employee");
+//            }
+//            else if(username.isEmpty() || password.isEmpty()){
+//                alertMsg = "Tài khoản hoặc mật khẩu không được rỗng";
+//                req.setAttribute("alert", alertMsg);
+//                req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
+//                return;
+//            }
 
-            //main handle
-            //iUserService service = new UserServices();
-            //User user = service.login(username, password);
-            if(username.equals("toan") && password.equals("123456")){
-                HttpSession session = req.getSession(true);
-                session.setAttribute("account", "toan");
-                session.setAttribute("account_name", "toandungpq");
-                if(isRememberMe){
-                    saveRemeberMe(resp, username);
-                }
-                resp.sendRedirect(req.getContextPath()+"/waiting");
-            }else{
-                alertMsg = "Tài khoản hoặc mật khẩu không đúng";
-                req.setAttribute("alert", alertMsg);
-                req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
-            }
+//            boolean isRememberMe = false;
+//            String remember = req.getParameter("remember");
+//            if("on".equals(remember)){
+//                isRememberMe = true;
+//            }
+//            //Check if there is does not have input
+//            String alertMsg="";
+//            if(username.isEmpty() || password.isEmpty()){
+//                alertMsg = "Tài khoản hoặc mật khẩu không được rỗng";
+//                req.setAttribute("alert", alertMsg);
+//                req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
+//                return;
+//            }
+//
+//            //main handle
+//            //iUserService service = new UserServices();
+//            //User user = service.login(username, password);
+//            if(username.equals("toan") && password.equals("123456")){
+//                HttpSession session = req.getSession(true);
+//                session.setAttribute("account", "toan");
+//                session.setAttribute("account_name", "toandungpq");
+//                if(isRememberMe){
+//                    saveRemeberMe(resp, username);
+//                }
+//
+////                resp.sendRedirect(req.getContextPath()+"/waiting");
+//            }else{
+//                alertMsg = "Tài khoản hoặc mật khẩu không đúng";
+//                req.setAttribute("alert", alertMsg);
+//                req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
+//            }
         }
         catch (Exception e){e.printStackTrace();}
     }
 
-    private void saveRemeberMe(HttpServletResponse response, String username){
-        Cookie cookie = new Cookie(Constants.COOKIE_REMEMBER, username);
-        cookie.setMaxAge(30*60);
-        response.addCookie(cookie);
-    }
+//    private void saveRemeberMe(HttpServletResponse response, String username){
+//        Cookie cookie = new Cookie(Constants.COOKIE_REMEMBER, username);
+//        cookie.setMaxAge(30*60);
+//        response.addCookie(cookie);
+//    }
 }

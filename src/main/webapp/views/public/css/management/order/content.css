@@ -1,0 +1,53 @@
+.table_order  .btn_Edit,
+.table_order  .btn_Delete
+{
+    border-radius: 4px;
+    padding: 1rem 1.5rem;
+    margin-left: 0.2rem;
+}
+.table_order  .btn_Edit{
+    background-color: green;
+    border: 1px solid green;
+}
+.table_order  .btn_Delete{
+    border: 1px solid red;
+}
+.table_wrapper table td:last-child{
+    width: 12rem;
+}
+
+/* FILTER STATUS */
+.filter_status .select_order-status{
+    border-radius: 4px;
+    margin-left: 1rem;
+    outline: none;
+    border: none;
+}
+.filter_status .select_order-status option{
+    border: none;
+}
+/* STATUS IN TABLE */
+.table_order td[name=status] {
+    width: 12rem;
+}
+.table_order td[name=status] div{
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px;
+}
+.table_order td[name=status] .status_complete{
+    background-color: aquamarine;
+    color: green;
+}
+
+.table_order td[name=status] .status_untreated{
+    background-color: #f4a5b2;
+    color: red;
+}
+.table_order td[name=status] .status_processing{
+    background-color: #edf0b1;
+    color: rgb(255, 157, 0);
+}
+.table_order td[name=status] div i{
+    margin-right: 0.2rem;
+}

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MyGwenShop:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>MyGwenShop</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="MyGwenShop-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="MyGwenShop:war exploded" />
+    </root>
+  </artifact>
+</component>

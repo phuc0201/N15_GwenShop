@@ -1,0 +1,84 @@
+#header{
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+.header__wrap
+{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #435ebe;
+    padding: 2rem 2.5rem;
+}
+.header__wrap #logoweb{
+    cursor: pointer;
+    font-size: 3rem;
+    color: #fff;
+}
+.header__wrap #logout{
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+.header__wrap #guide-button{
+    display: flex;
+    height: 1.6rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.header__wrap #guide-button div{
+    width: 2.2rem;
+    height: 0.16rem;
+    background-color: white;
+    margin-right: 2rem;
+}
+.header__item-left{
+    display: flex;
+    align-items: center;
+}
+#header__avata-user{
+    position: relative;
+    height: 3rem;
+    width: 3rem;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 1px solid white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    display: flex;
+}
+
+#header__avata-user .icon-user{
+    margin: auto;
+}
+
+#header__avata-user .popup-container{
+    display: none;
+}
+#header__avata-user.show-popup.show-popup .popup-container{
+    display: block;
+    position: absolute;
+    width: 20rem;
+    background-color: aliceblue;
+    top: 0%;
+    right: 120%;
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+#header__avata-user.show-popup .popup-container div{
+    padding: 1rem;
+}
+#header__avata-user.show-popup .popup-container div:hover{
+    background-color:rgb(217, 214, 210);
+    cursor: pointer;
+}
+#header__avata-user.show-popup .popup-container span{
+    color: black;
+}
+#header__avata-user.show-popup .popup-container i{
+    color: black;
+}

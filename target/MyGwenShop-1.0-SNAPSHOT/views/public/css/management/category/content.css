@@ -1,0 +1,61 @@
+.table_wrapper {
+    top: 15rem;
+}
+/* .table_wrapper .table_category{
+    border-radius: 4px;
+} */
+.content__header section{
+    width: 100%;
+    border: 2px solid #808098;
+    border-radius: 4px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+.content__header .search--input{
+    border: 1px solid transparent;
+}
+.content__header .insert_category{
+    position: relative;
+    display: flex;
+    margin-top: 1rem;
+}
+.content__header--buttonAdd{
+    margin: auto;
+    margin-left: 1rem;
+}
+.content__header .insert_category-input{
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+.table_category  .btn_Edit,
+.table_category  .btn_Delete
+{
+    border-radius: 4px;
+    padding: 1rem 1.5rem;
+    margin-left: 0.2rem;
+}
+.table_category  .btn_Edit{
+    background-color: green;
+    border: 1px solid green;
+}
+.table_category  .btn_Delete{
+    border: 1px solid red;
+}
+.table_category th:first-child{
+    width: 1rem;
+}
+.table_category th:last-child{
+    width: 20rem;
+}
+
+.content__header .insert_category.invalid .insert_category-input{
+    border-color: #f33a58;
+}
+.content__header .message{
+    position: absolute;
+    color: #f33a58;
+    top: 100%;
+    left: 0;
+}

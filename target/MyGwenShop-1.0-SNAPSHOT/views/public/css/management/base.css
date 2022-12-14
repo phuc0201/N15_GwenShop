@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+:root{
+    /* #1e121f #040720*/
+    --main-color: #181b1c;
+    --hover-color: #ee4d2d;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    position: relative;
+    height: 100vh;
+    margin: 0;
+}
+#web_body
+{
+    position: relative;
+    display: flex;
+    transition: ease-in-out 0.5s;
+    overflow: auto;
+}
+#web_body::-webkit-scrollbar-track{
+    background-color: #CFD8DC;
+}
+#web_body::-webkit-scrollbar{
+    width: 1.2rem;
+}
+#web_body::-webkit-scrollbar-thumb{
+    background-color: #90A4AE;
+    border-radius: 6px;
+    border: 3px solid #CFD8DC;
+}
+.layer
+{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 99;
+}
+input{
+    outline: none;
+}
+button{
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+}
+/* ANIMAION */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+
+/* TABLE */
+.table_wrapper
+{
+    position: absolute;
+    top: 10rem;
+    bottom: 5rem;
+    right: 4rem;
+    left: 4rem;
+    background-color: white;
+    overflow: auto;
+    scrollbar-width: thin;
+    box-shadow: 0 2px 5px #dcd7d5;
+}
+.table_wrapper::-webkit-scrollbar-track{
+    background-color: #CFD8DC;
+}
+.table_wrapper::-webkit-scrollbar{
+    width: 8px;
+}
+.table_wrapper::-webkit-scrollbar-thumb{
+    background-color: #90A4AE;
+    border-radius: 6px;
+    border: 3px solid #CFD8DC;
+}
+.table_wrapper table th{
+    position: sticky;
+    top: 0;
+    padding: 1rem;
+    background-color: #ffffff;
+    border: none;
+    text-align: start;
+}
+.table_wrapper table{
+    width: 100%;
+    border-spacing: 0;
+}
+.table_wrapper table td{
+    font-size: 1rem;
+    padding: 1rem;
+}
+.table_wrapper table, td:hover{
+    cursor: pointer;
+}
+.table_wrapper table tbody tr:nth-child(odd){
+    background-color: #eeeeee;
+}

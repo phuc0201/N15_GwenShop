@@ -114,8 +114,30 @@ function checkBox_checked(){
         })
     })
     icon_wastebasket.addEventListener("click", ()=>{
-        showSuccessToast("xóa");
+        let id = []
+        checkbox_wastebasket.forEach((item)=>{
+           if(item.checked){
+                id.push(getParentElement(item, "TR").querySelectorAll("td")[1].innerHTML)
+           }
+        })
+        $.post(
+            `${window.location.href}/deleteMany`,
+            {
+                arrayData:id,
+                mode:"insert"
+            }
+        )
+        .done(function (){
+            loadDataTable();
+        })
     })
+}
+
+function getParentElement(elm, tagName){
+    if(elm.parentElement.tagName == tagName){
+        return elm.parentElement;
+    }
+    return getParentElement(elm.parentElement, tagName);
 }
 
 function Validator(options) {

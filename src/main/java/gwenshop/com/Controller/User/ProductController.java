@@ -5,6 +5,7 @@ import GwenShop.com.Service.Impl.*;
 import GwenShop.com.entity.Cart;
 import GwenShop.com.entity.CartItem;
 import GwenShop.com.entity.Product;
+import GwenShop.com.entity.ProductImage;
 import GwenShop.com.util.JPAConfig;
 
 import javax.persistence.EntityManager;
@@ -19,7 +20,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/product/addToCart", "/customer/home", "/customer/home/load-product"})
+@WebServlet(urlPatterns = {"/product/addToCart", "/user/home", "/user/home/load-product",
+"/user/product"})
 public class ProductController extends HttpServlet{
     ICartService cartService = new CartServiceImpl();
     IProductService productService = new ProductServiceImpl();
@@ -34,8 +36,15 @@ public class ProductController extends HttpServlet{
         if(url.contains("load-product")){
             findAll(resp, entityManager);
         }
-        else if(url.contains("customer/home")){
-            req.getRequestDispatcher("/views/customer/home.jsp").forward(req,resp);
+        else if(url.contains("user/product")){
+            Product product = productService.findProductById(Integer.parseInt(req.getParameter("id")), entityManager);
+            List<ProductImage> productImages = productService.findProductImages(Integer.parseInt(req.getParameter("id")), entityManager);
+            req.setAttribute("product", product);
+            req.setAttribute("ImageList", productImages);
+            req.getRequestDispatcher("/views/user/product_detail.jsp").forward(req,resp);
+        }
+        else if(url.contains("user/home")){
+            req.getRequestDispatcher("/views/user/home.jsp").forward(req,resp);
         }
     }
 
@@ -90,12 +99,12 @@ public class ProductController extends HttpServlet{
                     "              <div class=\"product__item\">\n" +
                     "                <div class=\"product__item__pic set-bg\" style=\"background-image: url('"+ productService.findProductImages(p.getId(), entityManager).get(0).getImage() +"');\">\n" +
                     "                   <ul class=\"product__item__pic__hover\">\n" +
-                    "                        <li><a href=\"#\"><i class=\"fa-sharp fa-solid fa-cart-shopping\"></i></a></li>" +
+                    "                        <li><a href=\"AddToCar?id="+p.getId()+"\" style = \" align-items: center; display: flex;\"><i class=\"fa fa-shopping-cart\" style=\"margin:auto;\"></i></a></li>" +
                     "                   </ul>"+
                     "                </div>\n" +
                     "                <div class=\"product__item__text\">\n" +
-                    "                  <h6><a href=\"#\">"+p.getName()+"</a></h6>\n" +
-                    "                  <h5>"+p.getPrice()+"</h5>\n" +
+                    "                  <h6><a href=\"product?id="+p.getId()+"\">"+p.getName()+"</a></h6>\n" +
+                    "                  <h5>"+p.getPrice()+"VND</h5>\n" +
                     "                </div>\n" +
                     "              </div>\n" +
                     "            </div>");

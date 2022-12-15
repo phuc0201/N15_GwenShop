@@ -6,26 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-
-  <link rel="stylesheet" href="/views/costomer/css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="/views/costomer/fontawesome-free-6.1.1-web/css/all.css" type="text/css">
-  <link rel="stylesheet" href="/views/costomer/css/elegant-icons.css" type="text/css">
-  <link rel="stylesheet" href="/views/costomer/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="/views/costomer/css/nice-select.css" type="text/css">
-  <link rel="stylesheet" href="/views/costomer/css/jquery-ui.min.css" type="text/css">
-  <link rel="stylesheet" href="/views/costomer/css/owl.carousel.min.css" type="text/css">
-  <link rel="stylesheet" href="/views/costomer/css/slicknav.min.css" type="text/css">
-  <link rel="stylesheet" href="/views/costomer/css/style.css" type="text/css">
-</head>
 <footer class="footer spad">
   <div class="container">
     <div class="row">
@@ -66,4 +47,3 @@
     </div>
   </div>
 </footer>
-</html>

@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-
   <link rel="stylesheet" href="/views/costomer/css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="/views/costomer/fontawesome-free-6.1.1-web/css/all.css" type="text/css">
   <link rel="stylesheet" href="/views/costomer/css/elegant-icons.css" type="text/css">
@@ -19,9 +18,6 @@
   <link rel="stylesheet" href="/views/costomer/css/owl.carousel.min.css" type="text/css">
   <link rel="stylesheet" href="/views/costomer/css/slicknav.min.css" type="text/css">
   <link rel="stylesheet" href="/views/costomer/css/style.css" type="text/css">
-
-
-
 </head>
 <header class="header" style="border-bottom: 2px solid #7fad39">
   <div class="header__top">
@@ -61,3 +57,5 @@
     </div>
   </div>
 </header>
+
+

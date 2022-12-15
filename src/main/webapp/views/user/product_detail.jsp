@@ -8,8 +8,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<body>
 <jsp:include page="header.jsp"></jsp:include>
+<body>
 <section class="product-details spad">
   <div class="container">
     <div class="row">
@@ -80,6 +80,6 @@
     }
   })
 </script>
-<jsp:include page="footer.jsp"></jsp:include>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

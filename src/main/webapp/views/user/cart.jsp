@@ -2,8 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html lang="">
-<body>
 <jsp:include page="header.jsp"></jsp:include>
+<body>
 <section class="shoping-cart spad">
   <div class="container">
     <div class="row">
@@ -31,12 +31,12 @@
               <td class="shoping__cart__quantity">
                 <div class="quantity">
                   <div class="pro-qty"><span class="dec qtybtn">-</span>
-                    <input type="text"  value="1">
+                    <input type="text" value="1">
                     <span class="inc qtybtn">+</span></div>
                 </div>
               </td>
               <td class="shoping__cart__total">
-                $110.00
+                  <%--giá bán--%>
               </td>
               <td class="shoping__cart__item__close">
                 <span class="icon_close"></span>
@@ -80,8 +80,6 @@
     }
   })
 </script>
-<jsp:include page="footer.jsp"></jsp:include>
-
 </body>
-
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

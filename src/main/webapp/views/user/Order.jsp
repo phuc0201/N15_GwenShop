@@ -55,14 +55,14 @@
             <%-- phía chi tiết của hoá đơn--%>
           <div class="col-lg-4 col-md-6">
             <div class="checkout__order">
-              <h4>Your Order</h4>
-              <div class="checkout__order__products">Products <span>Total</span></div>
+              <h4>Chi tiết đơn hàng</h4>
+              <div class="checkout__order__products">Sản phẩm <span>Số lượng</span></div>
               <ul>
                 <li>Vegetable’s Package <span>$75.99</span></li>
                 <li>Fresh Vegetable <span>$151.99</span></li>
                 <li>Organic Bananas <span>$53.99</span></li>
               </ul>
-              <div class="checkout__order__total">Total <span>$750.99</span></div>
+              <div class="checkout__order__total">Tổng <span>$750.99</span></div>
               <div class="checkout__order__total">Phương thức thanh toán</div>
               <div class="checkout__input__checkbox">
                 <label for="MoMo">

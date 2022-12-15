@@ -47,7 +47,7 @@ public class LoginController extends HttpServlet {
             String email = req.getParameter("username");
             String password = req.getParameter("password");
             IUserService userService = new UserServiceImpl();
-            if (email == "1"){
+            if (email == "1234"){
                 resp.sendRedirect("/employee");
             }
             else {

@@ -128,6 +128,7 @@ function checkBox_checked(){
             }
         )
         .done(function (){
+            icon_wastebasket.style.display = "none";
             loadDataTable();
         })
     })
@@ -183,7 +184,6 @@ function checkSubmit(options, btn_name=""){
     let formElement = document.querySelector(options.form);
     if(btn_name == "delete"){
         DeleteData();
-        showSuccessToast("xóa")
         formElement.style.display = "none";
         document.querySelector(".layer").remove();
     }
@@ -217,11 +217,9 @@ function checkSubmit(options, btn_name=""){
                 {
                     if(btn_name == "create"){
                         InsertData();
-                        showSuccessToast('thêm');
                     }
                     else if(btn_name == "edit"){
                         UpdateData();
-                        showSuccessToast('sửa');
                     }
                     formElement.style.display = "none";
                     document.querySelector(".layer").remove();

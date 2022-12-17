@@ -4,6 +4,7 @@ import GwenShop.com.DAO.IOrderDAO;
 import GwenShop.com.DAO.Impl.OrderDAOImpl;
 import GwenShop.com.Service.IOrderService;
 import GwenShop.com.entity.Order;
+import GwenShop.com.entity.Orderdetail;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -18,6 +19,9 @@ public class OrderServiceImpl implements IOrderService {
     @Override
     public List<Order> findbyUserId(int id) {
         return orderDao.findbyUserId(id);
+    }
+    public List<Orderdetail> findProducts(int id){
+        return orderDao.findProducts(id);
     }
 
     @Override

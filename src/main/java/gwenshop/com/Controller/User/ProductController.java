@@ -38,7 +38,7 @@ public class ProductController extends HttpServlet{
         }
         else if(url.contains("user/product")){
             Product product = productService.findProductById(Integer.parseInt(req.getParameter("id")), entityManager);
-            List<ProductImage> productImages = productService.findProductImages(Integer.parseInt(req.getParameter("id")), entityManager);
+            List<ProductImage> productImages = product.getProductImages();
             req.setAttribute("product", product);
             req.setAttribute("ImageList", productImages);
             req.getRequestDispatcher("/views/user/product_detail.jsp").forward(req,resp);
@@ -97,7 +97,7 @@ public class ProductController extends HttpServlet{
         for(Product p: products){
             out.println(" <div class=\"col-lg-4 col-md-6 col-sm-6\">\n" +
                     "              <div class=\"product__item\">\n" +
-                    "                <div class=\"product__item__pic set-bg\" style=\"background-image: url('"+ productService.findProductImages(p.getId(), entityManager).get(0).getImage() +"');\">\n" +
+                    "                <div class=\"product__item__pic set-bg\" style=\"background-image: url('"+ productService.findProductImages(p.getId(), entityManager).get(0) +"');\">\n" +
                     "                   <ul class=\"product__item__pic__hover\">\n" +
                     "                        <li><a href=\"AddToCar?id="+p.getId()+"\" style = \" align-items: center; display: flex;\"><i class=\"fa fa-shopping-cart\" style=\"margin:auto;\"></i></a></li>" +
                     "                   </ul>"+

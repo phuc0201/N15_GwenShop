@@ -52,16 +52,21 @@ function getDataInput(){
 function EditData(){
     let data = {};
     data = getDataInput();
-    data.id = parseInt(column_data[1].innerHTML);
+    data.create_at = column_data[column_data.length-1].innerHTML;
     return data;
 }
 function UpdateData(){
     $.ajax({
-        url: `${window.location.href}/edit`,
+        url: `${window.location.href}/edit?id=${parseInt(column_data[1].innerHTML)}`,
         method: "POST",
         data: EditData(),
-        success: function () {
-            loadDataTable();
+        success: function (data) {
+            if(data == "error")
+                showErrorToast("thay đổi");
+            else{
+                showSuccessToast("thay đổi");
+                loadDataTable();
+            }
         }
     });
 }
@@ -70,8 +75,13 @@ function InsertData(){
         url: `${window.location.href}/create`,
         method: "POST",
         data: getDataInput(),
-        success: function () {
-            loadDataTable();
+        success: function (data) {
+            if(data == "success")
+            {
+                showSuccessToast("thêm");
+                loadDataTable();
+            }
+            else showErrorToast("thêm")
         }
     });
 }
@@ -82,8 +92,13 @@ function DeleteData(){
         data: {
             id: parseInt(column_data[1].innerHTML),
         },
-        success: function () {
-            loadDataTable();
+        success: function (data) {
+            if(data=="error")
+                showErrorToast("xóa");
+            else{
+                showSuccessToast("xóa");
+                loadDataTable();
+            }
         }
     });
 }

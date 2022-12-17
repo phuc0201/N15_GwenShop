@@ -1,5 +1,4 @@
 package GwenShop.com.Service;
-
 import GwenShop.com.entity.Product;
 import GwenShop.com.entity.ProductImage;
 import org.hibernate.engine.jdbc.Size;
@@ -14,6 +13,7 @@ public interface IProductService {
     public List<Product> findAll(EntityManager entityManager);
     public int count();
     public void delete(EntityManager entityManager, int idProd);
-    public List<ProductImage> findProductImages(int id, EntityManager entityManager);
+    public List<String> findProductImages(int id, EntityManager entityManager);
     public void Insert(EntityManager entityManager, Product product, String[] images, String[] sizes, String[] colors);
+    public void update(Product product, String[] ImageList);
 }

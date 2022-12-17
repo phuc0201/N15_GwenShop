@@ -26,20 +26,20 @@
                 </div>
                 <div class="">
                     <div id="filter_product">
-                        <div class="filter_product-price">
-                            <select name="" id="select_price">
-                                <option value="all">All</option>
-                                <option value="min">Dưới 500.000</option>
-                                <option value="middle">500.000 - 1.500.000</option>
-                                <option value="max">Trên 1.500.000</option>
-                            </select>
-                        </div>
+<%--                        <div class="filter_product-price">--%>
+<%--                            <select name="" id="select_price">--%>
+<%--                                <option value="all">All</option>--%>
+<%--                                <option value="min">Dưới 500.000</option>--%>
+<%--                                <option value="middle">500.000 - 1.500.000</option>--%>
+<%--                                <option value="max">Trên 1.500.000</option>--%>
+<%--                            </select>--%>
+<%--                        </div>--%>
                         <div class="filter_product-category">
                             <select name="" id="select_category">
                                 <option value="all">All</option>
-                                <option value="vest">Áo vest</option>
-                                <option value="unisex">Áo Unisex</option>
-                                <option value="shirt ">Áo sơ mi</option>
+                                <c:forEach items="${categoryList}" var="cate">
+                                    <option value="${cate.id}">${cate.name}</option>
+                                </c:forEach>
                             </select>
                         </div>
                     </div>

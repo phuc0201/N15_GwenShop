@@ -10,80 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94a3d21d-d92a-4339-a692-a0fd12738a8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/controller/management/orderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/controller/management/productController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/controller/management/userController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/entity/Orderdetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/elegant-icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/jquery-ui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/nice-select.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/owl.carousel.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/slicknav.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/OrderManagement/order.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/user/cart.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/user/header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/user/home.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/user/product_detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MyGwenShop_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/MyGwenShop_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/ICategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/ICategoryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/IOrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/IOrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/IProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/IProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/IUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/IUserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/Impl/CategoryDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/Impl/CategoryDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/Impl/OrderDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/Impl/OrderDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/Impl/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/Impl/ProductDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/Impl/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/DAO/Impl/UserDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/ICategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/ICategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/IOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/IOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/IProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/Impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/Impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/Impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/Impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/Impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/Impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/Service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/controller/User/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/controller/User/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/controller/User/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/controller/User/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/controller/management/categoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/controller/management/categoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/entity/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/entity/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/entity/CartItemDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/entity/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/entity/ProductDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/entity/ProductDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/entity/ProductImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/entity/ProductImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/entity/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GwenShop/com/util/JPAConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GwenShop/com/util/JPAConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/management/productController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/management/productController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/DAO/Impl/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/DAO/Impl/ProductDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/order.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/sidebar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/cart.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/content.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/product/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/product/content.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/sidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/user/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/user/content.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/CategoryManagement/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/CategoryManagement/category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/CategoryManagement/getElement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/CategoryManagement/getElement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/order/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/order/content.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/OrderManagement/getElement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/OrderManagement/getElement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/ProductManagement/checkInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/ProductManagement/checkInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/OrderManagement/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/OrderManagement/order.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/ProductManagement/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/ProductManagement/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/UserManagement/employee.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/UserManagement/getElement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/UserManagement/getElement.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/UserManagement/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/UserManagement/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/DAO/Impl/ProductDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/DAO/Impl/ProductDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/controller/management/productController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/controller/management/productController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/js/UserManagement/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/js/UserManagement/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/DAO/Impl/ProductDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/DAO/Impl/ProductDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/controller/management/productController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/controller/management/productController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,8 +250,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.UserDAOImpl" />
-        <item itemvalue="Application.CategoryDAOImpl" />
         <item itemvalue="Application.ProductDAOImpl" />
+        <item itemvalue="Application.CategoryDAOImpl" />
         <item itemvalue="Application.userController" />
         <item itemvalue="Application.JPAConfig" />
       </list>
@@ -330,6 +272,8 @@
       <workItem from="1670863182489" duration="17532000" />
       <workItem from="1670895817139" duration="66624000" />
       <workItem from="1671024122897" duration="5119000" />
+      <workItem from="1671117228012" duration="1338000" />
+      <workItem from="1671215999134" duration="21973000" />
     </task>
     <servers />
   </component>

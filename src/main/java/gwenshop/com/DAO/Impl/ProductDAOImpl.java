@@ -1,17 +1,13 @@
 package GwenShop.com.DAO.Impl;
 
-import GwenShop.com.DAO.ICategoryDAO;
 import GwenShop.com.DAO.IProductDAO;
-import GwenShop.com.Service.ICartItemService;
-import GwenShop.com.Service.ICategoryService;
 import GwenShop.com.Service.IProductService;
-import GwenShop.com.Service.Impl.CategoryServiceImpl;
 import GwenShop.com.Service.Impl.ProductServiceImpl;
 import GwenShop.com.entity.Product;
 import GwenShop.com.entity.ProductImage;
 import GwenShop.com.util.JPAConfig;
-import org.hibernate.engine.jdbc.Size;
 
+import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
@@ -48,15 +44,14 @@ public class ProductDAOImpl implements IProductDAO {
         return ((Long)query.getSingleResult()).intValue();
     }
     @Override
-    public List<ProductImage> findProductImages(int id, EntityManager entityManager){
-        String jpql = "SELECT p FROM ProductImage p where p.product.id = '"+id+"'";
-        TypedQuery<ProductImage> query = entityManager.createQuery(jpql, ProductImage.class);
+    public List<String> findProductImages(int id, EntityManager entityManager){
+        String jpql = "SELECT p.image FROM ProductImage p where p.product.id = '"+id+"'";
+        Query query = entityManager.createQuery(jpql);
         return query.getResultList();
     }
     @Override
     public Product findProductById(int prodId, EntityManager enma) {
-        Product product = enma.find(Product.class, prodId);
-        return product;
+        return enma.find(Product.class, prodId);
     }
     @Override
     public void Insert(EntityManager entityManager, Product product, String[] images, String[] sizes, String[] colors)    {
@@ -92,12 +87,13 @@ public class ProductDAOImpl implements IProductDAO {
             entityManager.close();
         }
     }
-    public void update(EntityManager entityManager, Product product, String[] ImageList){
+    public void update(Product product, String[] ImageList){
         try {
+            EntityManager entityManager = JPAConfig.getEntityManager();
             IProductService productService = new ProductServiceImpl();
+            List<ProductImage> productImages = productService.findProductById(product.getId(), entityManager).getProductImages();
             entityManager.getTransaction().begin();
             entityManager.merge(product);
-            List<ProductImage> productImages = productService.findProductImages(product.getId(), entityManager);
             boolean sameImg = false;
             for(ProductImage img: productImages){
                 sameImg = false;
@@ -126,7 +122,6 @@ public class ProductDAOImpl implements IProductDAO {
         }
         catch (Exception e){
             e.printStackTrace();
-            entityManager.getTransaction().rollback();
         }
     }
 }

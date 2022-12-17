@@ -11,7 +11,6 @@ import GwenShop.com.entity.ProductImage;
 import GwenShop.com.entity.Users;
 import GwenShop.com.util.JPAConfig;
 import org.apache.commons.beanutils.BeanUtils;
-
 import javax.persistence.EntityManager;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -35,12 +34,11 @@ public class productController extends HttpServlet {
             findAll(response, entityManager);
         }
         else if(url.contains("product/edit")){
+            List<String> productImages = productService.findProductImages(Integer.parseInt(request.getParameter("id")), entityManager);
             PrintWriter out = response.getWriter();
-            ProductImage productImage = new ProductImage();
-            List<ProductImage> productImages = productService.findProductImages(Integer.parseInt(request.getParameter("id")),entityManager);
-            for (ProductImage p: productImages){
+            for (String img: productImages){
                 out.println("<div class=\"image-item_wrapper\">"+
-                        "<div class=\"image-item\" style=\"background-image: url('"+p.getImage()+"');\">n"+
+                        "<div class=\"image-item\" style=\"background-image: url('"+img+"');\">n"+
                         " </div>" +
                         "<i class=\"fa-solid fa-circle-minus icon-minus\"></i>\n"+
                         " </div>");
@@ -49,6 +47,7 @@ public class productController extends HttpServlet {
         else {
             request.getRequestDispatcher("/views/admin/product.jsp").forward(request,response);
         }
+        entityManager.close();  
     }
 
     @Override
@@ -101,7 +100,7 @@ public class productController extends HttpServlet {
                     "<td class=\"col__id-product\">"+p.getId()+"</td>\n" +
                     "<td class=\"col__id-category\">"+p.getCategory().getId()+"</td>\n" +
                     "<td class=\"col__product-image\">\n" +
-                    "    <div class=\"product-image\" style=\"background-image: url('"+ productService.findProductImages(p.getId(), entityManager).get(0).getImage() +"');\">\n" +
+                    "    <div class=\"product-image\" style=\"background-image: url('"+ p.getProductImages().get(0).getImage() +"');\">\n" +
                     "    </div>\n" +
                     "</td>\n" +
                     "<td class=\"col__product-name\">"+p.getName()+"</td>\n" +
@@ -149,8 +148,7 @@ public class productController extends HttpServlet {
         product.setPrice(Integer.parseInt(request.getParameter("price")));
         product.setAmount(Integer.parseInt(request.getParameter("amount")));
         product.setCategory(categoryService.findById(Integer.parseInt(request.getParameter("category"))));
-        ProductDAOImpl productDAO = new ProductDAOImpl();
-        productDAO .update(entityManager, product, ImageList);
+        productService.update(product, ImageList);
     }
     public void deleteMany(HttpServletRequest request, EntityManager entityManager){
         String[] listId = request.getParameterValues("arrayData[]");

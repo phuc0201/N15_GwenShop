@@ -7,6 +7,20 @@ function getcontrol()
     if(list_image.length == 1)
         showImage.style.backgroundImage = null;
 
+    let categorySelector = document.getElementById("select_category");
+    categorySelector.onchange=_=>{
+        if(categorySelector.value == "all"){
+            loadDataTable();
+        }
+        else{
+            document.querySelectorAll(".table_wrapper tbody tr")
+            .forEach(row=>{
+                if(row.querySelectorAll("td")[2].innerHTML != categorySelector.value){
+                    row.style.display = "none";
+                }else row.style.display = "table-row";
+            })
+        }
+    }
     btn_Delete.forEach((del)=>{
         del.onclick = ()=>{
            let idProd = getParentElement(del, "TR").querySelectorAll("td")[1].innerHTML;

@@ -1,6 +1,6 @@
 function getElement() {
     btn_Delete = document.querySelectorAll(".btn_Delete")
-    btn_Edit = document.querySelectorAll(".btn_Edit")
+    btn_ShowInfoOrder = document.querySelectorAll(".btn_ShowInfo_Order")
 }
 getElement()
 

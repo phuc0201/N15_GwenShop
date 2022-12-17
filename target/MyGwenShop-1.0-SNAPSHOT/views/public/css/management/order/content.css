@@ -1,11 +1,11 @@
-.table_order  .btn_Edit,
+.table_order  .btn_ShowInfo_Order,
 .table_order  .btn_Delete
 {
     border-radius: 4px;
     padding: 1rem 1.5rem;
     margin-left: 0.2rem;
 }
-.table_order  .btn_Edit{
+.table_order  .btn_ShowInfo_Order{
     background-color: green;
     border: 1px solid green;
 }
@@ -51,3 +51,64 @@
 .table_order td[name=status] div i{
     margin-right: 0.2rem;
 }
+
+.form_product-detail{
+    z-index: 999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    background-color: #edf1f5;
+    color: black;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+.form_product-detail .row{
+    display: flex;
+    height: 15rem;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid silver;
+}
+.form_product-detail .row div{
+    width: 20rem;
+}
+.form_product-detail .row .image{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+.form_product-detail .row .Info{
+    display: flex;
+}
+.form_product-detail .row .Info div{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+.form_product-detail .row .Info span{
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+.form_product-detail .row .amount{
+    display: flex;
+}
+.form_product-detail .row .amount span{
+    margin: auto;
+}
+.form_product-detail .row .Info span:first-child{
+    margin-bottom: 7px;
+    font-weight: 750;
+    color: #3b7079;
+}
+.form_product-detail .row .price{
+    display: flex;
+}
+.form_product-detail .row .price span{
+    margin: auto;
+}
+

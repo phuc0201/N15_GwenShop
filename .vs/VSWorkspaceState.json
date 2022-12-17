@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\main",
+    "\\src\\main\\java",
+    "\\src\\main\\java\\GwenShop",
+    "\\src\\main\\java\\GwenShop\\com",
+    "\\src\\main\\java\\GwenShop\\com\\controller",
+    "\\src\\main\\java\\GwenShop\\com\\controller\\management"
+  ],
+  "SelectedNode": "\\src\\main\\java\\GwenShop\\com\\controller\\management\\productController.java",
+  "PreviewInSolutionExplorer": false
+}

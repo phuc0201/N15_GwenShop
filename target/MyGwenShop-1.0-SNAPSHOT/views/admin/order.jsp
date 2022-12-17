@@ -42,6 +42,9 @@
                 <table class="table_order">
                 </table>
             </div>
+                <form action="" class="form_product-detail">
+                    
+                </form>
         </div>
     </div>
     <script src="/views/public/js/OrderManagement/getElement.js"></script>

@@ -1,6 +1,7 @@
 package GwenShop.com.DAO;
 
 import GwenShop.com.entity.Order;
+import GwenShop.com.entity.Orderdetail;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.List;
 public interface IOrderDAO {
     public Order findbyId (int id);
     public List<Order> findbyUserId (int id);
+    public List<Orderdetail> findProducts(int id);
     public void insert (Order order);
     public void update (Order order);
     public void delete (int order) throws Exception;

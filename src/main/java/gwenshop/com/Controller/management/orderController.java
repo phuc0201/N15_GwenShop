@@ -1,9 +1,13 @@
 package GwenShop.com.controller.management;
 import GwenShop.com.Service.IOrderService;
+import GwenShop.com.Service.IProductService;
 import GwenShop.com.Service.IUserService;
 import GwenShop.com.Service.Impl.OrderServiceImpl;
+import GwenShop.com.Service.Impl.ProductServiceImpl;
 import GwenShop.com.Service.Impl.UserServiceImpl;
 import GwenShop.com.entity.Order;
+import GwenShop.com.entity.Orderdetail;
+import GwenShop.com.entity.Product;
 import GwenShop.com.util.JPAConfig;
 import javax.persistence.EntityManager;
 import javax.servlet.RequestDispatcher;
@@ -21,6 +25,8 @@ import java.util.Objects;
 public class orderController extends HttpServlet {
     IOrderService orderService = new OrderServiceImpl();
     IUserService userService = new UserServiceImpl();
+    IProductService productService = new ProductServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = request.getRequestURL().toString();
@@ -30,27 +36,45 @@ public class orderController extends HttpServlet {
             findAll(response, entityManager);
         }
         else if(url.contains("order/edit")){
-            PrintWriter out = response.getWriter();
+            List<Orderdetail> orderdetails = orderService.findProducts(Integer.parseInt(request.getParameter("id")));
             response.setCharacterEncoding("UTF-8");
-
+            PrintWriter out = response.getWriter();
+            for(Orderdetail order: orderdetails){
+                Product product = productService.findProductById(order.getProd_id(),entityManager);
+                out.println("<div class=\"row\">\n" +
+                        "                        <div class=\"image\" style = \"background-image: url('"+product.getProductImages().get(0).getImage()+"');\"></div>\n" +
+                        "                        <div class=\"Info\">\n" +
+                        "                           <div class=\"\">\n" +
+                        "                                <span>"+product.getCategory().getName()+"</span>\n" +
+                        "                                <span>"+product.getName()+"</span>\n" +
+                        "                           </div>\n" +
+                        "                        </div>\n" +
+                        "                        <div class=\"amount\">\n" +
+                        "                            <span>"+order.getAmount()+"</span>\n" +
+                        "                        </div>\n" +
+                        "                        <div class=\"price\">\n" +
+                        "                            <span>"+product.getPrice()+"vnđ</span>\n" +
+                        "                        </div>\n" +
+                        "                    </div>");
+            }
         }
         else {
             RequestDispatcher rq = request.getRequestDispatcher("/views/admin/order.jsp");
             rq.forward(request,response);
         }
+        entityManager.close();
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = request.getRequestURL().toString();
-        if(url.contains("create")){
-            insert(request);
+        if(url.contains("delete")){
+            try {
+                orderService.delete(Integer.parseInt(request.getParameter("id")));
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
-    }
-    public void insert(HttpServletRequest request){
-        Order order = new Order();
-
-        orderService.insert(order);
     }
     public String getStatusOrder(String stt){
         System.out.println(stt);
@@ -124,7 +148,7 @@ public class orderController extends HttpServlet {
                     "<td>"+o.getCreate_at()+"</td>\n" +
                     "<td>\n" +
                     "    <div class=\"\" style=\"display: flex; align-items: center;\">\n" +
-                    "        <button class=\"btn_Edit\">\n" +
+                    "        <button class=\"btn_ShowInfo_Order\">\n" +
                     "            <i class=\"fa-solid fa-file-invoice-dollar\" style=\"color: white;\"></i>\n" +
                     "        </button>\n" +
                     "        <button class=\"btn_Delete\">\n" +

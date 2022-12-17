@@ -54,13 +54,16 @@ public class UserDAOImpl implements IUserDAO {
     }
     @Override
     public Users findByEmail(String email) {
-        EntityManager enma = JPAConfig.getEntityManager();
-        Users user = enma.find(Users.class, email);
-        return user;
+        try{
+            EntityManager enma = JPAConfig.getEntityManager();
+            Query query = enma.createQuery("select u from Users u where u.email = '"+email+"'", Users.class);
+            return (Users) query.getSingleResult();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
-//    public Users findAccount(String email, String PassWord){
-//
-//    }
+
     @Override
     public List<Users> findUsersByName(String searchString) {
         EntityManager enma = JPAConfig.getEntityManager();
@@ -80,11 +83,5 @@ public class UserDAOImpl implements IUserDAO {
         String jpql = "SELECT u FROM Users u where u.roles = '"+role+"'";
         TypedQuery<Users> query = entityManager.createQuery(jpql, Users.class);
         return query.getResultList();
-    }
-
-    public static void main(String[] args) {
-        UserDAOImpl userDAO = new UserDAOImpl();
-//        Users users = userDAO.findAccount("hoangphuc01022002@gmail.com", "phuc02012002");
-        EntityManager entityManager = JPAConfig.getEntityManager();
     }
 }

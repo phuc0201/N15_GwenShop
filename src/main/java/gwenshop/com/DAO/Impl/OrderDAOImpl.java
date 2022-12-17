@@ -2,6 +2,8 @@ package GwenShop.com.DAO.Impl;
 
 import GwenShop.com.DAO.IOrderDAO;
 import GwenShop.com.entity.Order;
+import GwenShop.com.entity.Orderdetail;
+import GwenShop.com.entity.Product;
 import GwenShop.com.util.JPAConfig;
 
 import javax.persistence.EntityManager;
@@ -18,7 +20,11 @@ public class OrderDAOImpl implements IOrderDAO {
         Order order = enma.find(Order.class, id);
         return order;
     }
-
+    public List<Orderdetail> findProducts(int id){
+        EntityManager entityManager = JPAConfig.getEntityManager();
+        TypedQuery<Orderdetail> query = entityManager.createQuery("select o from Orderdetail o where o.order_id = '"+id+"'", Orderdetail.class);
+        return query.getResultList();
+    }
     @Override
     public List<Order> findbyUserId(int id) {
         String jpql = "SELECT o FROM Order o WHERE o.userId = :id";
@@ -70,6 +76,7 @@ public class OrderDAOImpl implements IOrderDAO {
            e.printStackTrace();
            entityManager.getTransaction().rollback();
        }
+       entityManager.close();
     }
     public List<Order> findAll(EntityManager entityManager){
         String jpql = "SELECT o FROM Order o";

@@ -12,8 +12,9 @@ public interface IProductDAO {
     List<Product> findAll(int page, int pageSize);
     List<Product> findAll(EntityManager entityManager);
     int count();
-    List<ProductImage> findProductImages(int id, EntityManager entityManager);
+    List<String> findProductImages(int id, EntityManager entityManager);
     Product findProductById(int prodId, EntityManager enma);
     public void delete(EntityManager entityManager, int idProd);
     void Insert(EntityManager entityManager, Product product, String[] images, String[] sizes, String[] colors);
+    public void update(Product product, String[] ImageList);
 }

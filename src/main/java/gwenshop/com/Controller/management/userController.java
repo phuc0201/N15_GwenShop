@@ -39,8 +39,6 @@ public class userController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = request.getRequestURL().toString();
-        EntityManager entityManager = JPAConfig.getEntityManager();
-
         if (url.contains("create")){
             insert(request,response);
         }
@@ -48,18 +46,13 @@ public class userController extends HttpServlet {
             update(request,response);
         }
         else if(url.contains("employee/deleteMany")){
-            deleteMany(request);
+            deleteMany(request, response);
         }
         else if(url.contains("customer/deleteMany")){
-            deleteMany(request);
+            deleteMany(request, response);
         }
         else if(url.contains("delete")){
-            delete(request);
-        }
-        else if (url.contains("load-table")){
-            if(url.contains("customer"))
-                findAll(response, entityManager, 0);
-            else findAll(response, entityManager, 1);
+            delete(request, response);
         }
         else {
             request.getRequestDispatcher("/views/admin/user.jsp").forward(request,response);
@@ -118,7 +111,13 @@ public class userController extends HttpServlet {
                 user.setRoles(1);
             }
             IUserService userService = new UserServiceImpl();
-            userService.createAccount(user);
+            PrintWriter out = resp.getWriter();
+            if(userService.findByEmail(req.getParameter("email")) == null)
+            {
+                userService.createAccount(user);
+                out.print("success");
+            }else out.print("error");
+
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
@@ -127,6 +126,7 @@ public class userController extends HttpServlet {
     }
     private void update(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         String url = req.getRequestURL().toString();
+        PrintWriter out = resp.getWriter();
         try {
             Users user = new Users();
             req.setCharacterEncoding("UTF-8");
@@ -138,24 +138,30 @@ public class userController extends HttpServlet {
                 user.setRoles(1);
             }
             IUserService userService = new UserServiceImpl();
-            userService.update(user);
-
-        } catch (IllegalAccessException e) {
+            Users finduser = userService.findByEmail(req.getParameter("email"));
+            if(finduser == null || finduser.getId() == user.getId())
+            {
+                userService.update(user);
+            }else out.print("error");
+        }
+        catch (Exception e){
+            out.print("error");
             e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
         }
     }
-    private void delete(HttpServletRequest req){
+    private void delete(HttpServletRequest req, HttpServletResponse response) throws IOException {
+        PrintWriter out = response.getWriter();
         try
         {
             IUserService userService = new UserServiceImpl();
             userService.delete(Integer.parseInt(req.getParameter("id")));
         }catch (Exception e){
+            out.print("error");
             e.printStackTrace();
         }
     }
-    private void deleteMany(HttpServletRequest request){
+    private void deleteMany(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        PrintWriter out = response.getWriter();
         String[] listId = request.getParameterValues("arrayData[]");
         for(String id: listId){
             try
@@ -163,6 +169,7 @@ public class userController extends HttpServlet {
                 IUserService userService = new UserServiceImpl();
                 userService.delete(Integer.parseInt(id));
             }catch (Exception e){
+                out.print("error");
                 e.printStackTrace();
             }
         }

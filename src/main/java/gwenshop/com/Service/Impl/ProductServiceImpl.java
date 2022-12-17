@@ -37,8 +37,11 @@ public class ProductServiceImpl implements IProductService {
     }
     public void delete(EntityManager entityManager, int idProd){productDao.delete(entityManager, idProd);}
     public List<Product> findAll(EntityManager entityManager){ return productDao.findAll(entityManager);}
-    public List<ProductImage> findProductImages(int id, EntityManager entityManager){return productDao.findProductImages(id, entityManager);}
+    public List<String> findProductImages(int id, EntityManager entityManager){return productDao.findProductImages(id, entityManager);}
     public void Insert(EntityManager entityManager, Product product, String[] images, String[] sizes, String[] colors){
         productDao.Insert(entityManager, product, images, sizes, colors);
+    }
+    public void update(Product product, String[] ImageList){
+        productDao.update(product, ImageList);
     }
 }

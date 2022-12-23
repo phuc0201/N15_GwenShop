@@ -12,7 +12,7 @@ public interface IUserDAO {
     public void delete(int id);
     public Users findByEmail(String email);
     public List<Users> findUsersByName(String searchString);
-    Users findById(int userid, EntityManager enma);
+    Users findById(int userid);
 
     List<Users> findAll(EntityManager entityManager, int role);
 }

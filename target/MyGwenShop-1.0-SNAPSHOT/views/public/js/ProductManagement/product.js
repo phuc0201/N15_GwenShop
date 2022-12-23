@@ -240,8 +240,13 @@ function InsertData(){
             mode:"insert"
         }
     )
-    .done(function (){
-        loadDataTable();
+    .done(function (data){
+        if(data=="error")
+            showErrorToast("thêm");
+        else{
+            showSuccessToast("thêm");
+            loadDataTable();
+        }
     })
 }
 function UpdateData(){
@@ -265,7 +270,12 @@ function UpdateData(){
             mode:"insert"
         }
     )
-        .done(function (){
-            loadDataTable();
+        .done(function (data){
+            if(data=="error")
+                showErrorToast("cập nhật");
+            else{
+                showSuccessToast("cập nhật");
+                loadDataTable();
+            }
         })
 }

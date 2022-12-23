@@ -9,7 +9,6 @@
     background-color: #ffffff;
     transition: ease-in-out 0.5s;
     z-index: 99999999;
-    box-shadow: 0 1px 10px #dcd7d5;
 }
 #sidebar ul{
     margin: 0;

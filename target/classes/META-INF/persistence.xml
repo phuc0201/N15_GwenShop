@@ -12,32 +12,9 @@
             <property name="javax.persistence.jdbc.password" value="phuc02012002"/>
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.ddl-auto" value="update"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
         </properties>
     </persistence-unit>
 </persistence>
-
-<!--<?xml version="1.0" encoding="UTF-8" standalone="yes"?>-->
-<!--<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"-->
-<!--             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
-<!--             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"-->
-<!--             version="2.2">-->
-<!--    &lt;!&ndash; <persistence-unit name="default">&ndash;&gt;-->
-
-<!--    &lt;!&ndash; Kết nối SQL Server with SQL Authentication &ndash;&gt;-->
-<!--    <persistence-unit name="springDBMSSQL">-->
-<!--        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
-<!--        <class>GwenShop.com.DAO.Impl.CartDAOImpl</class>-->
-<!--        <class>GwenShop.com.DAO.Impl.CartItemDAOImpl</class>-->
-<!--        <properties>-->
-<!--            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=GwenShop" />&lt;!&ndash; user=sa;password=1234567@a$ &ndash;&gt;-->
-<!--            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />-->
-<!--            <property name="javax.persistence.jdbc.user" value="sa" />-->
-<!--            <property name="javax.persistence.jdbc.password" value="123456" />-->
-<!--            <property name="hibernate.show_sql" value="true" />-->
-<!--            <property name="hibernate.format_sql" value="true" />-->
-<!--            <property name="hibernate.ddl-auto" value="update" />-->
-<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServer2008Dialect"></property>-->
-<!--            <property name="hibernate.hbm2ddl.auto" value="update" />-->
-<!--        </properties>-->
-<!--    </persistence-unit>-->
-<!--</persistence>-->

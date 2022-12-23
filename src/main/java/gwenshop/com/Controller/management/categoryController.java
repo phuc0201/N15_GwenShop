@@ -18,10 +18,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/category", "/category/load-table",
-        "/category/create",
-        "/category/delete",
-        "/category/edit"})
+@WebServlet(urlPatterns = {"/admin/category", "/admin/category/load-table",
+        "/admin/category/create",
+        "/admin/category/delete",
+        "/admin/category/edit"})
 public class categoryController extends HttpServlet {
     ICategoryService categoryService = new CategoryServiceImpl();
     @Override
@@ -80,8 +80,8 @@ public class categoryController extends HttpServlet {
         for(Category c: categories){
             out.println("<tr>\n" +
                     "<td class=\"col__id-category\">"+c.getId()+"</td>\n" +
-                    "<td class=\"col__category-name\">"+c.getName()+"</td>\n" +
-                    "<td class=\"col__category-productAmount\">"+c.getAmount()+"</td> \n" +
+                    "<td class=\"col_name\">"+c.getName()+"</td>\n" +
+                    "<td class=\"col__category-productAmount\">"+c.getProducts().size()+"</td> \n" +
                     "<td>\n" +
                     "   <button class=\"btn_Edit\">\n" +
                     "           <i class=\"fa-solid fa-pen-to-square\" style=\"color: white;\"></i>\n" +

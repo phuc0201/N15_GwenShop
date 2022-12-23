@@ -85,7 +85,7 @@
             <version>1.9.4</version>
         </dependency>
 
-        <!-- Thư viện SQL server JDBC driver -->
+        <!-- Thư viện SQL server JDBC drivefr -->
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>

@@ -33,8 +33,8 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public Users findById(int userid,  EntityManager enma) {
-		return userDao.findById(userid, enma);
+	public Users findById(int userid) {
+		return userDao.findById(userid);
 	}
 	public List<Users> findAll(EntityManager entityManager, int role){return userDao.findAll(entityManager, role);}
 }

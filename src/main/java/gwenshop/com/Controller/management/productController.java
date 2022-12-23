@@ -20,8 +20,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/product", "/product/load-table", "/product/create", "/product/delete", "/product/edit",
-"/product/deleteMany"})
+@WebServlet(urlPatterns = {"/admin/product", "/admin/product/load-table", "/admin/product/create", "/admin/product/delete", "/admin/product/edit",
+"/admin/product/deleteMany"})
 public class productController extends HttpServlet {
     IProductService productService = new ProductServiceImpl();
     ICategoryService categoryService = new CategoryServiceImpl();
@@ -56,16 +56,16 @@ public class productController extends HttpServlet {
         EntityManager entityManager = JPAConfig.getEntityManager();
 
         if(url.contains("create")){
-            insert(request, entityManager);
+            insert(request, response, entityManager);
         }
         else if(url.contains("product/deleteMany")){
             deleteMany(request, entityManager);
         }
         else if(url.contains("delete")){
-            delete(request, entityManager);
+            delete(request, response, entityManager);
         }
         else if(url.contains("product/edit")){
-            update(request, entityManager);
+            update(request, response, entityManager);
         }
         else if(url.contains("product/load-table")){
             findAll(response, entityManager);
@@ -81,7 +81,6 @@ public class productController extends HttpServlet {
         String header_table = "<thead>"+"<tr>\n" +
                 "    <th></th>\n" +
                 "    <th>ID</th>\n" +
-                "    <th>ID Danh mục</th>\n" +
                 "    <th>Ảnh</th>\n" +
                 "    <th>Tên sản phẩm</th>\n" +
                 "    <th>Mô tả</th>\n" +
@@ -93,17 +92,21 @@ public class productController extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println(header_table + "<tbody>");
         for(Product p: products){
+            int cate_id = 0;
+            if(p.getCategory()!=null){
+                cate_id = p.getCategory().getId();
+            }
             data_table = "<tr>\n" +
                     "<td>\n" +
                     "    <input type=\"checkbox\">\n" +
                     "</td>\n" +
                     "<td class=\"col__id-product\">"+p.getId()+"</td>\n" +
-                    "<td class=\"col__id-category\">"+p.getCategory().getId()+"</td>\n" +
+                    "<td class=\"col__id-category\" style=\"display:none;\">"+cate_id+"</td>\n" +
                     "<td class=\"col__product-image\">\n" +
                     "    <div class=\"product-image\" style=\"background-image: url('"+ p.getProductImages().get(0).getImage() +"');\">\n" +
                     "    </div>\n" +
                     "</td>\n" +
-                    "<td class=\"col__product-name\">"+p.getName()+"</td>\n" +
+                    "<td class=\"col_name\">"+p.getName()+"</td>\n" +
                     "<td class=\"col__product-description\">\n" +
                     "    <textarea readonly class=\"product-description\">"+p.getDescription()+"</textarea>\n" +
                     "</td>\n" +
@@ -124,31 +127,52 @@ public class productController extends HttpServlet {
         }
         out.println("</tbody>");
     }
-    public void insert(HttpServletRequest request, EntityManager entityManager){
-        Product product = new Product();
-        String[] ImageList= request.getParameterValues("arrayData[]");
-        product.setCategory(categoryService.findById(Integer.parseInt(request.getParameter("category"))));
-        product.setName(request.getParameter("name"));
-        product.setDescription(request.getParameter("description"));
-        product.setPrice(Integer.parseInt(request.getParameter("price")));
-        product.setAmount(Integer.parseInt(request.getParameter("amount")));
-        product.setCategory(categoryService.findById(Integer.parseInt(request.getParameter("category"))));
-        productService.Insert(entityManager, product, ImageList, null, null);
+    public void insert(HttpServletRequest request,HttpServletResponse response, EntityManager entityManager) throws IOException {
+        PrintWriter out = response.getWriter();
+        try {
+            Product product = new Product();
+            String[] ImageList= request.getParameterValues("arrayData[]");
+            product.setCategory(categoryService.findById(Integer.parseInt(request.getParameter("category"))));
+            product.setName(request.getParameter("name"));
+            product.setDescription(request.getParameter("description"));
+            product.setPrice(Integer.parseInt(request.getParameter("price")));
+            product.setAmount(Integer.parseInt(request.getParameter("amount")));
+            product.setCategory(categoryService.findById(Integer.parseInt(request.getParameter("category"))));
+            productService.Insert(entityManager, product, ImageList, null, null);
+        }catch (Exception e){
+            out.print("error");
+            e.printStackTrace();
+        }
+
     }
-    public void delete(HttpServletRequest request, EntityManager entityManager){
-        productService.delete(entityManager, Integer.parseInt(request.getParameter("id")));
+    public void delete(HttpServletRequest request, HttpServletResponse response, EntityManager entityManager) throws IOException {
+        try {
+            productService.delete(entityManager, Integer.parseInt(request.getParameter("id")));
+        }catch (Exception e){
+            response.getWriter().println("error");
+            e.printStackTrace();
+        }
     }
-    public void update(HttpServletRequest request, EntityManager entityManager){
-        Product product = new Product();
-        String[] ImageList= request.getParameterValues("arrayData[]");
-        product.setCategory(categoryService.findById(Integer.parseInt(request.getParameter("category"))));
-        product.setId(Integer.parseInt(request.getParameter("id")));
-        product.setName(request.getParameter("name"));
-        product.setDescription(request.getParameter("description"));
-        product.setPrice(Integer.parseInt(request.getParameter("price")));
-        product.setAmount(Integer.parseInt(request.getParameter("amount")));
-        product.setCategory(categoryService.findById(Integer.parseInt(request.getParameter("category"))));
-        productService.update(product, ImageList);
+    public void update(HttpServletRequest request, HttpServletResponse response,EntityManager entityManager) throws IOException {
+        PrintWriter out = response.getWriter();
+        try {
+            Product product = new Product();
+            String[] ImageList= request.getParameterValues("arrayData[]");
+            int cate_id = Integer.parseInt(request.getParameter("category"));
+            if(cate_id == 0)
+                product.setCategory(null);
+            else product.setCategory(categoryService.findById(cate_id));
+
+            product.setId(Integer.parseInt(request.getParameter("id")));
+            product.setName(request.getParameter("name"));
+            product.setDescription(request.getParameter("description"));
+            product.setPrice(Integer.parseInt(request.getParameter("price")));
+            product.setAmount(Integer.parseInt(request.getParameter("amount")));
+            productService.update(product, ImageList);
+        }catch (Exception e){
+            out.print("error");
+            e.printStackTrace();
+        }
     }
     public void deleteMany(HttpServletRequest request, EntityManager entityManager){
         String[] listId = request.getParameterValues("arrayData[]");

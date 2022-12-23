@@ -10,22 +10,124 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94a3d21d-d92a-4339-a692-a0fd12738a8c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/User/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/management/dashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/util/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/product.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/product_detail.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/user_info.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/responsive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/user/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/user/product.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/user/taglib.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/user/user_info.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/User/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/User/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/management/categoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/management/categoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/management/orderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/management/orderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/management/productController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/management/productController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/DAO/Impl/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/DAO/Impl/ProductDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/management/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/Controller/management/userController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/DAO/IUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/DAO/IUserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/DAO/Impl/CategoryDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/DAO/Impl/CategoryDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/DAO/Impl/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/DAO/Impl/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/Service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/Service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/Service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/Service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/entity/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/entity/Orderdetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/entity/Orderdetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gwenshop/com/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gwenshop/com/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/category.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/order/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/order/content.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/OrderManagement/getElement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/OrderManagement/getElement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/OrderManagement/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/OrderManagement/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/elegant-icons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/nice-select.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/owl.carousel.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/slicknav.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/customer/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/category/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/category/content.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/content.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/product/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/product/content.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/css/management/sidebar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/ProductManagement/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/ProductManagement/product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/UserManagement/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/UserManagement/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/DAO/Impl/ProductDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/DAO/Impl/ProductDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/user/cart.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/user/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/user/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/user/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/user/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/user/product_detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/user/product_detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/DAO/IUserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/DAO/IUserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/DAO/Impl/CategoryDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/DAO/Impl/CategoryDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/DAO/Impl/UserDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/DAO/Impl/UserDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/Service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/Service/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/Service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/Service/Impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/controller/User/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/controller/User/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/controller/management/categoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/controller/management/categoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/controller/management/orderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/controller/management/orderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/controller/management/productController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/controller/management/productController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/controller/management/userController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/controller/management/userController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/entity/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/entity/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/entity/Orderdetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/entity/Orderdetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/entity/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/GwenShop/com/entity/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/admin/category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/admin/category.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/admin/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/admin/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/admin/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/admin/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/admin/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/admin/product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/admin/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/admin/user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/customer/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/customer/elegant-icons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/customer/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/customer/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/customer/nice-select.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/customer/owl.carousel.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/customer/slicknav.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/customer/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/management/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/management/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/management/category/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/management/category/content.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/management/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/management/content.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/management/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/management/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/management/product/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/management/product/content.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/management/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/css/management/sidebar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/js/ProductManagement/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/js/ProductManagement/product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/js/UserManagement/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/js/UserManagement/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/DAO/Impl/ProductDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/DAO/Impl/ProductDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/user/cart.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/user/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/user/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/user/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/user/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/user/product_detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyGwenShop-1.0-SNAPSHOT/views/user/product_detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/DAO/IUserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/DAO/IUserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/DAO/Impl/CategoryDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/DAO/Impl/CategoryDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/DAO/Impl/UserDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/DAO/Impl/UserDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/Service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/Service/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/Service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/Service/Impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/controller/User/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/controller/User/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/controller/management/categoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/controller/management/categoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/controller/management/orderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/controller/management/orderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/controller/management/productController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/controller/management/productController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/controller/management/userController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/controller/management/userController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/entity/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/entity/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/entity/Orderdetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/entity/Orderdetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GwenShop/com/entity/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GwenShop/com/entity/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,10 +167,12 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CNPM/Gr15_GwenShop/N15_GwenShop/src/main/webapp/views/user&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -78,12 +182,20 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CNPM\Gr15_GwenShop\N15_GwenShop\src\main\webapp\views\user" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CNPM\Gr15_GwenShop\N15_GwenShop\src\main\webapp\views\public\css\customer\home" />
       <recent name="D:\LapTrinhWeb\Project\MyGwenShop\src\main\webapp\views" />
       <recent name="D:\LapTrinhWeb\Project\MyGwenShop\src\main\webapp\views\admin" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="GwenShop.com.controller.management" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="GwenShop.com.util" />
+      <recent name="GwenShop.com.controller" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.65">
@@ -249,9 +361,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CategoryDAOImpl" />
         <item itemvalue="Application.UserDAOImpl" />
         <item itemvalue="Application.ProductDAOImpl" />
-        <item itemvalue="Application.CategoryDAOImpl" />
         <item itemvalue="Application.userController" />
         <item itemvalue="Application.JPAConfig" />
       </list>
@@ -273,7 +385,13 @@
       <workItem from="1670895817139" duration="66624000" />
       <workItem from="1671024122897" duration="5119000" />
       <workItem from="1671117228012" duration="1338000" />
-      <workItem from="1671215999134" duration="21973000" />
+      <workItem from="1671215999134" duration="25721000" />
+      <workItem from="1671331930686" duration="19469000" />
+      <workItem from="1671469898835" duration="1018000" />
+      <workItem from="1671524248470" duration="22100000" />
+      <workItem from="1671709948765" duration="16020000" />
+      <workItem from="1671795502113" duration="1043000" />
+      <workItem from="1671810545804" duration="11018000" />
     </task>
     <servers />
   </component>

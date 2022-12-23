@@ -20,8 +20,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Objects;
-@WebServlet(urlPatterns = {"/order", "/order/load-table", "/order/create",
-"/order/edit", "/order/delete"})
+@WebServlet(urlPatterns = {"/admin/order", "/admin/order/load-table", "/admin/order/create",
+"/admin/order/edit", "/admin/order/delete"})
 public class orderController extends HttpServlet {
     IOrderService orderService = new OrderServiceImpl();
     IUserService userService = new UserServiceImpl();
@@ -40,7 +40,7 @@ public class orderController extends HttpServlet {
             response.setCharacterEncoding("UTF-8");
             PrintWriter out = response.getWriter();
             for(Orderdetail order: orderdetails){
-                Product product = productService.findProductById(order.getProd_id(),entityManager);
+                Product product = productService.findProductById(order.getProduct().getId(),entityManager);
                 out.println("<div class=\"row\">\n" +
                         "                        <div class=\"image\" style = \"background-image: url('"+product.getProductImages().get(0).getImage()+"');\"></div>\n" +
                         "                        <div class=\"Info\">\n" +
@@ -124,7 +124,7 @@ public class orderController extends HttpServlet {
         for(Order o: orders){
             String employee;
             try {
-                employee = userService.findById(o.getEmployeeId(), entityManager).getFullname();
+                employee = userService.findById(o.getEmployeeId()).getFullname();
             }
             catch (Exception e){
                 employee = "Chưa có người duyệt";
@@ -135,7 +135,7 @@ public class orderController extends HttpServlet {
                     "    <input type=\"checkbox\">\n" +
                     "</td>\n" +
                     "<td>"+o.getId()+"</td>\n" +
-                    "<td>"+o.getFullName()+"</td>\n" +
+                    "<td class=\"col_name\">"+o.getFullName()+"</td>\n" +
                     "<td>"+o.getAddress()+"</td>\n" +
                     "<td>"+o.getPhoneNumber()+"</td>\n" +
                     "<td class=\"\" name = \"status\">\n" +

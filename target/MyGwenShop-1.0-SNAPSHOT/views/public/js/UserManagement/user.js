@@ -2,6 +2,15 @@ let column_data = [];
 function getcontrol()
 {
     getElement();
+    if(window.location.href.includes("customer")){
+        document.querySelector("#inforMember .heading").innerHTML = "Thông tin User"
+        document.querySelector(".content__header--buttonAdd").style.display = "none"
+        document.querySelector(".form-info--button").style.display = "none"
+        document.querySelectorAll(".table_wrapper table tbody tr").forEach(row=>{
+            row.querySelectorAll("td")[0].style.display = "none"
+        })
+        document.querySelectorAll(".table_wrapper table thead tr th")[0].style.display = "none"
+    }
     checkBox_checked();
     getInforMember.forEach((item) => {
         item.addEventListener("dblclick", () =>{
@@ -62,9 +71,9 @@ function UpdateData(){
         data: EditData(),
         success: function (data) {
             if(data == "error")
-                showErrorToast("thay đổi");
+                showErrorToast("cập nhật");
             else{
-                showSuccessToast("thay đổi");
+                showSuccessToast("cập nhật");
                 loadDataTable();
             }
         }

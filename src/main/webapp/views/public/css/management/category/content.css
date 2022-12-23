@@ -1,30 +1,25 @@
-.table_wrapper {
-    top: 15rem;
-}
-/* .table_wrapper .table_category{
-    border-radius: 4px;
-} */
 .content__header section{
     width: 100%;
     border: 2px solid #808098;
     border-radius: 4px;
     padding: 2rem;
-    margin-top: 2rem;
-}
-.content__header .search--input{
-    border: 1px solid transparent;
 }
 .content__header .insert_category{
     position: relative;
     display: flex;
     margin-top: 1rem;
 }
+.content__header .search{
+    width: 218px;
+}
 .content__header--buttonAdd{
     margin: auto;
     margin-left: 1rem;
 }
 .content__header .insert_category-input{
-    padding: 0.8rem;
+    padding: 1rem;
+    line-height: 1.6rem;
+    font-size: 1.6rem;
     border-radius: 5px;
     border: 1px solid transparent;
 }

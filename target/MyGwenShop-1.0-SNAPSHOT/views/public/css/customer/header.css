@@ -1,0 +1,88 @@
+.header-section .navbar_left span{
+    font-size: 4rem;
+}
+header{
+    box-shadow: 0 0 1rem 0.05rem rgba(0,0,0, 10%);
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.navbar{
+    justify-content: space-between;
+}
+header .container .navbar,
+header .container .navbar .navbar_middle{
+    display: flex;
+} 
+.navbar_middle li a{
+    margin: 0 2rem;
+}
+.navbar_middle .nav-link{
+    font-size: 1.6rem;
+    
+}
+.navbar_middle .nav-item{
+    margin-top: auto;
+    margin-bottom: auto;
+} 
+.navbar_middle .nav-item.active a{
+    border-bottom: 2px solid black;
+}
+.navbar_right{
+    display: flex;
+}
+.navbar_right li{
+    margin: auto 0 auto 2rem;
+}
+.navbar_right i{
+    font-size: 2rem;
+    position: relative;
+}
+.navbar_right .login:hover,
+.navbar_right .signup:hover,
+.navbar_right i:hover{
+    color: rgb(27, 181, 150);
+}
+.navbar_right i.icon_user{
+    display: none;
+}
+.navbar_right i.active{
+    display: block;
+}
+.navbar_right i.icon_user .pop_up{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 0 1rem 0.05rem rgba(0,0,0, 15%);
+    border-radius: 10px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.navbar_right i.icon_user .pop_up li{
+    margin: 0;
+    width: 14rem;
+    padding: 1.5rem;
+    text-align: center;
+
+}
+.navbar_right i.icon_user:hover > .pop_up{
+    display: block;
+}
+.navbar_right i.icon_user .pop_up li:hover{
+    background-color: rgb(218, 217, 215);
+}
+.navbar_right .signup,
+.navbar_right .login{
+    font-size: 1.6rem;
+}
+.navbar_right .login{
+    padding-right: 1rem;
+    border-right: 1px solid black;
+}
+.navbar_right .signup{
+    padding-left: 1rem;
+}

@@ -1,0 +1,20 @@
+.category{
+    box-shadow: 0 0 0.5rem 0.1rem rgba(0,0,0,0.2);
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.category .category_title{
+    font-size: 3rem;
+    color: #fff;
+    padding: 1rem;
+    background-color: rgb(14, 199, 137);
+    font-weight: 600;
+}
+.category .category_item{
+    font-size: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}

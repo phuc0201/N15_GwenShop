@@ -1,85 +1,71 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div id="preloder">
-  <div class="loader"></div>
-</div>
-<div class="humberger__menu__overlay"></div>
-<div class="humberger__menu__wrapper">
-  <div class="humberger__menu__logo">
-    <a href="#"><img src="img/logo.png" alt=""></a>
-  </div>
-  <nav class="humberger__menu__nav mobile-menu">
-    <ul>
-      <li class="active"><a href="./index.html">Home</a></li>
-      <li><a href="./shop-grid.html">Shop</a></li>
-      <li><a href="#">Pages</a>
-        <ul class="header__menu__dropdown">
-          <li><a href="./shop-details.html">Shop Details</a></li>
-          <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-          <li><a href="./checkout.html">Check Out</a></li>
-          <li><a href="./blog-details.html">Blog Details</a></li>
-        </ul>
-      </li>
-      <li><a href="./blog.html">Blog</a></li>
-      <li><a href="./contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <div id="mobile-menu-wrap"></div>
-</div>
-<header class="header">
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3">
-        <div class="header__logo">
-          <a href="./index.html"><img src="img/logo.png" alt=""></a>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <nav class="header__menu">
-          <ul>
-            <li><a href="home">Home</a></li>
-            <li><a href="cart">Cart</a></li>
-          </ul>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<header class="header-section header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar_left logo"  href="/user/home">
+                <span>GWEN</span>
+            </a>
+            <ul class="navbar_middle  mx-auto ">
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/home">Trang Chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/product">Sản Phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Tin Tức</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Giới Thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Liên Hệ</a>
+                </li>
+            </ul>
+            <ul class="navbar_right">
+                <li>
+                    <!-- <form >
+                        <div class="search">
+                            <input type="text" asp-for="TenNguoiDung" placeholder="Tìm kiếm sản phẩm">
+                        </div>
+                    </form> -->
+                </li>
+                <li>
+                    <a href="">
+                        <a class="" href="wishlist.html">
+                            <i class="fa-regular fa-heart icon_heart"></i>
+                        </a>
+                    </a>
+
+                </li>
+                <li>
+                    <a class="" href="cart.html">
+                        <i class="fa-solid fa-bag-shopping icon_bag"></i>
+                    </a>
+
+                </li>
+                <li>
+                    <c:choose>
+                        <c:when test="${sessionScope.account == null}">
+                            <a href="${pageContext.request.contextPath}/login" class="login">Đăng nhập</a>
+                            <a href="${pageContext.request.contextPath}/sign-up" class="signup">Đăng ký</a>
+                        </c:when>
+                        <c:otherwise>
+                            <i class="fa-regular fa-user icon_user active">
+                                <div class="pop_up">
+                                    <ul>
+                                        <li><a href="${pageContext.request.contextPath}/user/info">Tài khoản</a></li>
+                                        <li><a href="${pageContext.request.contextPath}">Đơn hàng</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/sign-out">Đăng xuất</a></li>
+                                    </ul>
+                                </div>
+                            </i>
+                        </c:otherwise>
+                    </c:choose>
+                </li>
+            </ul>
+            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"></div> -->
         </nav>
-      </div>
-      <div class="col-lg-3">
-      </div>
     </div>
-    <div class="humberger__open">
-      <i class="fa fa-bars"></i>
-    </div>
-  </div>
 </header>
-<section class="hero hero-normal">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3">
-        <div class="hero__categories">
-          <div class="hero__categories__all">
-            <i class="fa fa-bars"></i>
-            <span>Danh mục</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-9">
-        <div class="hero__search">
-          <div class="hero__search__form">
-            <form action="#">
-              <input type="text">
-              <button type="submit" class="site-btn">SEARCH</button>
-            </form>
-          </div>
-          <div class="hero__search__phone">
-            <div class="hero__search__phone__icon" style="display: flex;">
-              <i class="fa fa-phone" style="margin: auto"></i>
-            </div>
-            <div class="hero__search__phone__text">
-              <h5>+84 0328614013</h5>
-              <span>support 24/7 time</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>

@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "orderdetail")
@@ -20,8 +17,11 @@ public class Orderdetail {
     private int id;
     @Column(name = "order_id")
     private int order_id;
-    @Column(name = "product_id")
-    private int prod_id;
+
     @Column(name = "amount")
     private int amount;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 }

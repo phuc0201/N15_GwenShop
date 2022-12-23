@@ -13,6 +13,6 @@ public interface IUserService {
     public Users findByEmail(String email);
     public List<Users> findUsersByName(String searchString);
 
-    public Users findById(int userid, EntityManager enma);
+    public Users findById(int userid);
     public List<Users> findAll(EntityManager entityManager, int role);
 }

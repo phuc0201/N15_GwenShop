@@ -1,0 +1,31 @@
+#web_body{
+    width: 100%;
+}
+
+.web_content{
+    width: 100%;
+    display: flex;
+}
+.web_content .form_info{
+    margin: 4rem auto;
+    padding: 5rem;
+    border-radius: 5px;
+    box-shadow: 0 0 1rem 0.1rem rgba(0,0,0,0.1);
+}
+.web_content .form_info .form_gr input{
+    padding: 1rem;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgba(0,0,0,0.2);
+    margin-bottom: 2rem;
+    width: 50rem;
+}
+.web_content .form_info .form_gr input:hover{
+    border: 1px solid rgba(10, 240, 156, 0.3);
+}
+.web_content .form_info .form_gr button{
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(10, 240, 156, 1);
+}

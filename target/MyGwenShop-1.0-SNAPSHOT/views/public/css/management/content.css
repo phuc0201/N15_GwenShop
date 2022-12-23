@@ -1,34 +1,72 @@
 #web_body{
-    height: 90vh;
+    flex: 1;
     position: relative;
+    width: 100%;
+    height: 100%;
+    margin: auto;
 }
+#web_body .content__wrapper{}
 #web_body .content{
     position: absolute;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #f2f7ff;
-    padding: 4rem;
+    padding: 4rem 2rem;
     transition: ease-in-out 0.5s;
+    display: flex;
+    flex-direction: column;
 }
 /* SEARCH */
 .content .search{
     display: flex;
     align-items: center;
+    position: relative;
 }
 .search--input{
-    outline: none;
-    border: none;
     border-radius: 5px;
     line-height: 1.6rem;
-    padding: 0.8rem;
+    font-size: 1.6rem;
+    padding: 1rem;
+    border: 1.5px solid;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.search--input:focus{
+    box-sizing: border-box;
+    border-color: #696cff;
+    box-shadow: 0 0 0.5rem 0.2rem rgb(255 255 255 / 10%);
+}
+.search_hint{
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    color: black;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1;
+}
+.search_hint div{
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-bottom:1px solid silver ;
+}
+.search_hint div:hover{
+    background-color: #90A4AE;
+}
+.search_hint div p{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 /* CONTENT_HEADER */
 .content__header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 5rem;
+    margin-bottom: 1rem;
 }
 .content__header div{
     display: flex;
@@ -39,13 +77,67 @@
     height: 3rem;
 }
 .content__header--buttonAdd{
-    width: 3rem;
-    height: 3rem;
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 1rem;
+    background-color: #696cff;
+    border-radius: 5px;
+    margin-bottom: auto;
+    margin-top: auto;
+
 }
 .content__header--buttonAdd,
 .content__header--buttonDel{
     cursor: pointer;
     margin-left: 1rem;
+}
+
+/* TABLE */
+.table_wrapper
+{
+    background-color: #ffffff;
+    overflow: auto;
+    scrollbar-width: thin;
+    flex: 1;
+    border-radius: 10px 10px 0 0;
+    overflow: auto;
+    box-shadow: 0 0 1rem 0.5rem rgb(0 0 0 / 35%);
+}
+
+.table_wrapper::-webkit-scrollbar-track{
+    background-color: #CFD8DC;
+}
+.table_wrapper::-webkit-scrollbar{
+    width: 8px;
+}
+.table_wrapper::-webkit-scrollbar-thumb{
+    background-color: #90A4AE;
+    border-radius: 6px;
+    border: 3px solid #CFD8DC;
+}
+.table_wrapper table th{
+    position: sticky;
+    top: 0;
+    padding: 1rem;
+    background-color: #ffffff;
+    border: none;
+    text-align: start;
+    color: black;
+}
+.table_wrapper table{
+    width: 100%;
+    border-spacing: 0;
+}
+.table_wrapper table td{
+    font-size: 1.4rem;
+    padding: 1rem;
+    color: black;
+}
+.table_wrapper table, td:hover{
+    cursor: pointer;
+}
+.table_wrapper table tbody tr:nth-child(odd){
+    background-color: #eeeeee;
 }
 
 /* NOTIFICATION */

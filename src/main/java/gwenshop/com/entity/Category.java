@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "vw_category")
+@Table(name = "category")
 @NamedQuery(name="Category.findAll", query = "SELECT c FROM Category c")
 @Getter
 @Setter
@@ -22,10 +22,8 @@ public class Category implements Serializable {
     private int id;
     @Column(name = "category_name")
     private String name;
-    @Column(name = "amount")
-    private int amount;
-//
-//    //Tạo quan hệ
-//    @OneToMany(mappedBy = "category")
-//    private List<Product> products;
+
+    //Tạo quan hệ
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
 }

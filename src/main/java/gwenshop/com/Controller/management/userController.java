@@ -17,9 +17,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/employee", "/employee/create", "/employee/delete", "/employee/edit",
-"/employee/load-table", "/customer", "/customer/load-table", "/customer/create", "/customer/delete", "/customer/edit",
-"/employee/deleteMany", "/customer/deleteMany"})
+@WebServlet(urlPatterns = {"/admin/employee", "/admin/employee/create", "/admin/employee/delete", "/admin/employee/edit",
+"/admin/employee/load-table", "/admin/customer", "/admin/customer/load-table",
+"/admin/employee/deleteMany", "/admin/customer/deleteMany"})
 public class userController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -48,9 +48,6 @@ public class userController extends HttpServlet {
         else if(url.contains("employee/deleteMany")){
             deleteMany(request, response);
         }
-        else if(url.contains("customer/deleteMany")){
-            deleteMany(request, response);
-        }
         else if(url.contains("delete")){
             delete(request, response);
         }
@@ -67,7 +64,7 @@ public class userController extends HttpServlet {
             datatable = datatable + "<tr>" +
                     "<td><input type=\"checkbox\"></td>" +
                     "<td>"+u.getId()+"</td>" +
-                    "<td>"+u.getFullname()+"</td>" +
+                    "<td class=\"col_name\">"+u.getFullname()+"</td>" +
                     "<td>"+u.getEmail()+"</td>" +
                     "<td>"+u.getPasswd()+"</td>" +
                     "<td>"+u.getAddr()+"</td>" +
@@ -104,10 +101,7 @@ public class userController extends HttpServlet {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDateTime now = LocalDateTime.now();
             user.setCreate_at(dtf.format(now));
-            if(url.contains("customer")){
-                user.setRoles(0);
-            }
-            else if(url.contains("employee")){
+            if(url.contains("employee")){
                 user.setRoles(1);
             }
             IUserService userService = new UserServiceImpl();
@@ -131,10 +125,7 @@ public class userController extends HttpServlet {
             Users user = new Users();
             req.setCharacterEncoding("UTF-8");
             BeanUtils.populate(user, req.getParameterMap());
-            if(url.contains("customer")){
-                user.setRoles(0);
-            }
-            else if(url.contains("employee")){
+            if(url.contains("employee")){
                 user.setRoles(1);
             }
             IUserService userService = new UserServiceImpl();

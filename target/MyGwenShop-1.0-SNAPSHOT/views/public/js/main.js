@@ -33,7 +33,6 @@ function closeNav() {
     sidebar.style.transform = "translateX(-100%)";
 }
 
-
 function showSuccessToast(action) {
     // let messageConfirm = `Bạn có chắc chắn muốn ${action} không`;
     let message = `Bạn đã ${action} thành công`;
@@ -233,3 +232,50 @@ function checkSubmit(options, btn_name=""){
         }
     }
 }
+
+
+let input_search = document.querySelector(".search--input");
+input_search.oninput = ()=>{
+    if(document.querySelector(".search_hint")){
+        document.querySelector(".search_hint").remove();
+    }
+    let search_hint = document.createElement("div");
+    search_hint.className = "search_hint";
+    input_search.parentElement.appendChild(search_hint)
+    search_hint.innerHTML = "";
+    document.querySelectorAll("table .col_name").forEach(name =>{
+        if(name.innerHTML.includes(input_search.value) && input_search.value!=""){
+            let search_hint_items = document.querySelectorAll(".search_hint div");
+            if(search_hint_items.length <= 10){
+                search_hint.innerHTML+=`
+                <div><p>${name.innerHTML}</p></div>
+                `
+            }
+            document.querySelectorAll(".search_hint div").forEach(item=>{
+                item.onclick = ()=>{
+                    input_search.value = item.querySelector("p").innerHTML;
+                    document.querySelector(".search_hint").remove();
+                    document.querySelectorAll("table .col_name").forEach(row=>{
+                        if(!row.innerHTML.includes(input_search.value)){
+                            row.parentElement.style.display = "none";
+                        }
+                    })
+                }
+            })
+        }
+    })
+}
+input_search.addEventListener("keypress", (event)=>{
+    if (event.key === "Enter") {
+        if(document.querySelector(".search--input").value == ""){}
+        if(document.querySelector(".search_hint")){
+            document.querySelector(".search_hint").remove();
+            document.querySelectorAll("table tbody tr").forEach(row=>{row.style.display = "table-row";})
+            document.querySelectorAll("table .col_name").forEach(col=>{
+                if(!col.innerHTML.includes(input_search.value)){
+                    col.parentElement.style.display = "none";
+                }
+            })
+        }
+    }
+})

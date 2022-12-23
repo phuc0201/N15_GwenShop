@@ -74,8 +74,9 @@ public class UserDAOImpl implements IUserDAO {
     }
 
     @Override
-    public Users findById(int userid, EntityManager enma) {
-        Users user = enma.find(Users.class, userid);
+    public Users findById(int userid) {
+        EntityManager entityManager = JPAConfig.getEntityManager();
+        Users user = entityManager.find(Users.class, userid);
         return user;
     }
     @Override

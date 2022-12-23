@@ -1,7 +1,12 @@
 package GwenShop.com.DAO.Impl;
 
 import GwenShop.com.DAO.ICategoryDAO;
+import GwenShop.com.Service.ICategoryService;
+import GwenShop.com.Service.IProductService;
+import GwenShop.com.Service.Impl.CategoryServiceImpl;
+import GwenShop.com.Service.Impl.ProductServiceImpl;
 import GwenShop.com.entity.Category;
+import GwenShop.com.entity.Product;
 import GwenShop.com.util.JPAConfig;
 
 import javax.persistence.EntityManager;
@@ -81,17 +86,4 @@ public class CategoryDAOImpl implements ICategoryDAO {
         return null;
     }
 
-//    public static void main(String[] args) throws Exception {
-//        ICategoryDAO categoryDAO = new CategoryDAOImpl();
-//        EntityManager enma = JPAConfig.getEntityManager();
-//        try {
-//            enma.getTransaction().begin();
-//            enma.createNativeQuery("delete from category where id=8").executeUpdate();
-//            enma.getTransaction().commit();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }finally {
-//            enma.close();
-//        }
-//    }
 }

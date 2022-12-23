@@ -20,9 +20,11 @@
                 <div class="content__header">
                     <div>
                         <div class="search">
-                            <input class="search--input" type="text" onkeypress="checkEnterClick(event)" placeholder="Nhập tên hoặc ID">
+                            <input class="search--input" type="text" placeholder="Nhập tên hoặc ID">
                         </div>
-                        <img src="/views/public/icon/icon_add.png" class="content__header--buttonAdd" alt=" ">
+                        <div class="content__header--buttonAdd">
+                            + Add new
+                        </div>
                     </div>
                     <img src="/views/public/icon/icon_wastebasket.png" class="content__header--buttonDel" alt="">
                 </div>
@@ -35,7 +37,7 @@
         </div>
         <div id = "inforMember">
             <form action="" method="post" class="form" id="form-infoMember">
-                <h3 class="heading">Thông tin User</h3>
+                <h3 class="heading">Thông tin nhân viên</h3>
                 <div class="spacer"></div>
                 <div class="" style="display: flex; justify-content: space-between;">
                     <div class="form-group">

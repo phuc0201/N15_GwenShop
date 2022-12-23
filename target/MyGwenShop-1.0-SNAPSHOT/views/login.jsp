@@ -39,7 +39,7 @@
                         <div class="alert alert-danger" role="alert">${alert}</div>
                     </c:if>
                     <h2 class="form-title">Đăng nhập vào <strong>Gwen Shop</strong></h2>
-                    <form method="POST" class="register-form" id="login-form" action = "${pageContext.request.contextPath}/admin/login">
+                    <form method="POST" class="register-form" id="login-form" action = "${pageContext.request.contextPath}">
                         <div class="form-group">
                             <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                             <input type="text" name="username" id="your_name" placeholder="Tài khoản"/>
@@ -53,8 +53,7 @@
                             <label for="remember-me" class="label-agree-term"><span><span></span></span>Nhớ tôi</label>
                         </div>
                         <div class="form-group form-button">
-                            <input type="submit" name="signin" id="signin" class="form-submit" value="Đăng nhập"
-                            />
+                            <input type="submit" name="signin" id="signin" class="form-submit" value="Đăng nhập"/>
                         </div>
                     </form>
                     <div class="social-login">

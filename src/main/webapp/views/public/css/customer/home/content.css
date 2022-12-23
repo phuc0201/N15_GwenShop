@@ -1,0 +1,62 @@
+#web_body{
+    width: 100%;
+}
+
+.web_content{
+    width: 100%;
+}
+
+.web_content .banner{
+    width: 100%;
+    height: 70rem;
+    background-image: url(/views/public/images/banner/banner.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.web_content .service{
+    margin-top: 1rem;
+    width: 100%;
+    height: 30rem;
+    background-image: url(/views/public/images/service.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+
+.products .product{
+    margin-top: 2rem;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 0.5rem 0.2rem rgba(0,0,0, 15%);
+}
+.products .product .product-image{
+    position: relative;
+    padding-top: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+.products .product .product-image .icon_heart{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 30px;
+    /*color: #f15f5f;*/
+    /* font-weight: 100; */
+}
+.product-info{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.product-info span{
+    display: block;
+    font-size: 2rem;
+}
+.product .addToCart{
+    font-size: 3rem;
+    border-radius: 50% 50%;
+}
+.product .addToCart .icon_bag{
+    color: rgb(14, 199, 137);
+}

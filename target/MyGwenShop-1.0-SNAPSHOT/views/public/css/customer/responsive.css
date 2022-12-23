@@ -1,0 +1,19 @@
+.header-section .container{
+    padding: 1.5rem 4rem;
+}
+@media screen and (min-width: 1440px) {
+    .header-section .container{
+        padding: 1.5rem 10rem;
+    }
+    #web_body{
+        padding: 0 10rem;
+    }
+}
+@media screen and (min-width: 1200px)  and (max-width: 1439px){
+    .header-section .container{
+        padding: 1.5rem 8rem;
+    }
+    #web_body{
+        padding: 0 8rem;
+    }
+}

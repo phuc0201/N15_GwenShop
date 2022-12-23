@@ -3,6 +3,7 @@ package GwenShop.com.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -45,5 +46,6 @@ public class Product implements Serializable {
     private List<ProductImage> productImages;
 
     @OneToMany(mappedBy = "product")
-    private List<CartItem> cartItems;
+    @ToString.Exclude
+    private List<Orderdetail> orderItems;
 }

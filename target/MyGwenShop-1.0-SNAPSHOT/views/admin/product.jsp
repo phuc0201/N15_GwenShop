@@ -20,9 +20,11 @@
             <div class="content__header">
                 <div>
                     <div class="search">
-                        <input class="search--input" type="text" onkeypress="checkEnterClick(event)" placeholder="Nhập tên hoặc ID">
+                        <input class="search--input" type="text" placeholder="Nhập tên hoặc ID">
                     </div>
-                    <img src="/views/public/icon/icon_add.png" class="content__header--buttonAdd" alt="">
+                    <div class="content__header--buttonAdd">
+                        + Add new
+                    </div>
                 </div>
                 <div class="">
                     <div id="filter_product">
@@ -37,6 +39,7 @@
                         <div class="filter_product-category">
                             <select name="" id="select_category">
                                 <option value="all">All</option>
+                                <option value="0">Chưa xếp danh mục</option>
                                 <c:forEach items="${categoryList}" var="cate">
                                     <option value="${cate.id}">${cate.name}</option>
                                 </c:forEach>
@@ -107,6 +110,7 @@
                             </section>
                         </div>
                         <select name="category" id="category">
+                            <option value="0">Chưa xếp danh mục</option>
                             <c:forEach items="${categoryList}" var="cate">
                                 <option value="${cate.id}">${cate.name}</option>
                             </c:forEach>

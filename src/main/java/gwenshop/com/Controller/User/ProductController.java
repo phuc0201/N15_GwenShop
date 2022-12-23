@@ -2,10 +2,7 @@ package GwenShop.com.controller.User;
 
 import GwenShop.com.Service.*;
 import GwenShop.com.Service.Impl.*;
-import GwenShop.com.entity.Cart;
-import GwenShop.com.entity.CartItem;
-import GwenShop.com.entity.Product;
-import GwenShop.com.entity.ProductImage;
+import GwenShop.com.entity.*;
 import GwenShop.com.util.JPAConfig;
 
 import javax.persistence.EntityManager;
@@ -20,7 +17,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/product/addToCart", "/user/home", "/user/home/load-product",
+@WebServlet(urlPatterns = {"/user/product/addToCart", "/user/home",
 "/user/product"})
 public class ProductController extends HttpServlet{
     ICartService cartService = new CartServiceImpl();
@@ -32,18 +29,23 @@ public class ProductController extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = req.getRequestURL().toString();
         EntityManager entityManager = JPAConfig.getEntityManager();
+        List<Product> products = productService.findAll(entityManager);
         req.setAttribute("categoryList", categoryService.findAll(entityManager));
-        if(url.contains("load-product")){
-            findAll(resp, entityManager);
-        }
-        else if(url.contains("user/product")){
-            Product product = productService.findProductById(Integer.parseInt(req.getParameter("id")), entityManager);
-            List<ProductImage> productImages = product.getProductImages();
-            req.setAttribute("product", product);
-            req.setAttribute("ImageList", productImages);
-            req.getRequestDispatcher("/views/user/product_detail.jsp").forward(req,resp);
+        if(url.contains("user/product")){
+            if(req.getParameter("id")!=null){
+                int prodId = Integer.parseInt(req.getParameter("id"));
+                Product product = productService.findProductById(prodId, entityManager);
+                req.setAttribute("product", product);
+                req.getRequestDispatcher("/views/user/product_detail.jsp").forward(req,resp);
+            }else {
+                List<Category> categories = categoryService.findAll(entityManager);
+                req.setAttribute("products", products);
+                req.setAttribute("category", categories);
+                req.getRequestDispatcher("/views/user/product.jsp").forward(req,resp);
+            }
         }
         else if(url.contains("user/home")){
+            req.setAttribute("products", products);
             req.getRequestDispatcher("/views/user/home.jsp").forward(req,resp);
         }
     }
@@ -91,23 +93,6 @@ public class ProductController extends HttpServlet{
 //    }
 //    }
     private void findAll(HttpServletResponse response, EntityManager entityManager) throws IOException {
-        response.setCharacterEncoding("UTF-8");
-        PrintWriter out = response.getWriter();
-        List<Product> products = productService.findAll(entityManager);
-        for(Product p: products){
-            out.println(" <div class=\"col-lg-4 col-md-6 col-sm-6\">\n" +
-                    "              <div class=\"product__item\">\n" +
-                    "                <div class=\"product__item__pic set-bg\" style=\"background-image: url('"+ productService.findProductImages(p.getId(), entityManager).get(0) +"');\">\n" +
-                    "                   <ul class=\"product__item__pic__hover\">\n" +
-                    "                        <li><a href=\"AddToCar?id="+p.getId()+"\" style = \" align-items: center; display: flex;\"><i class=\"fa fa-shopping-cart\" style=\"margin:auto;\"></i></a></li>" +
-                    "                   </ul>"+
-                    "                </div>\n" +
-                    "                <div class=\"product__item__text\">\n" +
-                    "                  <h6><a href=\"product?id="+p.getId()+"\">"+p.getName()+"</a></h6>\n" +
-                    "                  <h5>"+p.getPrice()+"</h5>\n" +
-                    "                </div>\n" +
-                    "              </div>\n" +
-                    "            </div>");
-        }
+
     }
 }

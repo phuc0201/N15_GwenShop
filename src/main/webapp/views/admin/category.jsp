@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="views/public/fontawesome-free-6.1.1-web/css/all.min.css">
-    <link rel="stylesheet" href="views/public/css/management/base.css">
-    <link rel="stylesheet" href="views/public/css/management/content.css">
-    <link rel="stylesheet" href="views/public/css/management/category/content.css">
+    <link rel="stylesheet" href="/views/public/fontawesome-free-6.1.1-web/css/all.min.css">
+    <link rel="stylesheet" href="/views/public/css/management/base.css">
+    <link rel="stylesheet" href="/views/public/css/management/content.css">
+    <link rel="stylesheet" href="/views/public/css/management/category/content.css">
     <title>category</title>
 </head>
 <body>
@@ -18,11 +18,15 @@
         <div class="content">
             <div class="content__header">
                 <section>
-                    <input class="search--input" type="text" placeholder="Tìm kiếm">
+                    <div class="search">
+                        <input class="search--input" type="text" placeholder="Nhập tên hoặc ID">
+                    </div>
                     <div class="insert_category">
                         <input class="insert_category-input" type="text" placeholder="Nhập tên danh mục">
                         <span class="message"></span>
-                        <img src="views/public/icon/icon_add.png" class="content__header--buttonAdd" alt="">
+                        <div class="content__header--buttonAdd">
+                            + Add new
+                        </div>
                     </div>
                 </section>
             </div>
@@ -35,10 +39,10 @@
     </div>
 </div>
 <div id="toast"></div>
-<script src="views/public/js/CategoryManagement/getElement.js"></script>
-<script src="views/public/js/main.js"></script>
-<script src="views/public/js/CategoryManagement/checkInfo.js"></script>
-<script src="views/public/js/CategoryManagement/category.js"></script>
+<script src="/views/public/js/CategoryManagement/getElement.js"></script>
+<script src="/views/public/js/main.js"></script>
+<script src="/views/public/js/CategoryManagement/checkInfo.js"></script>
+<script src="/views/public/js/CategoryManagement/category.js"></script>
 </body>
 </html>
 

@@ -1,0 +1,11 @@
+@media screen and (min-width: 1440px) {
+    .header__wrap,
+    #web_body{
+        max-width: 1440px;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+    .header__wrap{
+        max-width: 1200px;
+    }
+}
